@@ -1,0 +1,36 @@
+#!/bin/bash 
+
+xssh () 
+{ 
+    c=($(cat ~/.colorcombo |sort -R |head -1|sed 's/-/ /'));
+    if [[ $SHELL = "/bin/bash" ]]; then
+        fg=${c[0]};
+        bg=${c[1]};
+    else
+        fg=${c[1]};
+        bg=${c[2]};
+    fi;
+    XTOPTS='-fs 9 -geom 120x36';
+    xt="xterm $XTOPTS -bg '#$bg' -fg '#$fg'";
+    if [[ $# -ne 1 ]]; then
+        _known_hosts_real -a -F '' '';
+        host=$(zenity --list --title "Select Host" --column "host" ${COMPREPLY[@]});
+        cmd="TERM=xterm $xt -T $fg-$bg-$1 -e ssh -Y $host";
+        echo "$fg-$bg" > /tmp/colorcombo;
+        echo "Executing CMD :: $cmd";
+        eval $cmd &
+    fi;
+    cmd="TERM=xterm $xt -T $fg-$bg-$1 -e ssh -Y $1";
+    echo "$fg-$bg" > /tmp/colorcombo;
+    echo "Executing CMD :: $cmd";
+    eval $cmd &
+}
+
+
+function addhosts()
+{
+	for i in {1..254}; do echo "192.168.183.$i vm$i" | sudo tee -a /etc/hosts; done
+}
+
+
+# ft=sh
