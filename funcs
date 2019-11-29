@@ -33,4 +33,9 @@ function addhosts()
 }
 
 
+function f() {
+	#function_body
+    	find . -iname \*$1\*
+}
+
 # ft=sh

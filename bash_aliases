@@ -1,3 +1,6 @@
+neofetch
+
+
 # alias
 alias ls="ls --color"
 alias vi="vim"
@@ -7,13 +10,20 @@ alias wget="wget -U 'noleak'"
 alias curl="curl --user-agent 'noleak'"
 alias burppro='java -jar ~/BurpPro/burpsuite_pro_v2.1.04.jar &'
 
+alias g='grep -i'
+
 # source files
 [ -r /usr/share/bash-completion/completions ] &&
   . /usr/share/bash-completion/completions/*
 
 
-[[ -r ~/.Xdefaults ]] &&
-   xrdb -merge ~/.Xdefaults
+if [[ -r ~/.Xdefaults ]]
+then
+    if [[ $TMUX == "" ]]
+    then
+	xrdb -merge ~/.Xdefaults
+    fi
+fi
 
 
 
