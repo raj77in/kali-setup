@@ -1,0 +1,18 @@
+[submodule "tmux/tmux-logging"]
+	path = tmux/tmux-logging
+	url = https://github.com/tmux-plugins/tmux-logging
+[submodule "tmux/tmux-online-status"]
+	path = tmux/tmux-online-status
+	url = https://github.com/tmux-plugins/tmux-online-status
+[submodule "tmux/tmux-pain-control"]
+	path = tmux/tmux-pain-control
+	url = https://github.com/tmux-plugins/tmux-pain-control
+[submodule "tmux/tmux-prefix-highlight"]
+	path = tmux/tmux-prefix-highlight
+	url = https://github.com/tmux-plugins/tmux-prefix-highlight
+[submodule "tmux/tmux-sensible"]
+	path = tmux/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule "tmux/tmux-yank"]
+	path = tmux/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank

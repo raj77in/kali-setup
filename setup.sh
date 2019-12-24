@@ -21,16 +21,20 @@
 set -o nounset                              # Treat unset variables as an error
 
 
+git clone --recurse-submodules -j8 https://github.com/raj77in/kali-setup
 cd 
 echo "Check if bashrc sources ~/.bash_aliases, if not source the same"
-ln -s kali-setup/config/Xdefaults .Xdefaults
-ln -s kali-setup/config/funcs .funcs
-ln -s kali-setup/config/inputrc .inputrc
-ln -s kali-setup/config/vimrc .vimrc
 # ln -s kali-setup/config/.bashrc
-ln -s kali-setup/config/bash_aliases .bash_aliases
-ln -s kali-setup/config/colorcombo .colorcombo
-ln -s kali-setup/config/tmux.conf .tmux.conf
+ln -s $PWD/Xdefaults .Xdefaults
+ln -s $PWD/funcs .funcs
+ln -s $PWD/inputrc .inputrc
+ln -s $PWD/vimrc .vimrc
+ln -s $PWD/bash_aliases .bash_aliases
+ln -s $PWD/colorcombo .colorcombo
+ln -s $PWD/tmux.conf .tmux.conf
+## Some useful tmux plugins ...
+ln -s $PWD/tmux ~/.tmux
+
 
 
 ## Install some useful stuff :)
@@ -40,16 +44,6 @@ apt autoremove
 apt autoclean
 apt install -y tmux-themepack-jimeh fonts-powerline fonts-font-awesome exploitdb-papers neofetch ack
 
-
-## Some useful tmux plugins ...
-mkdir ~/.tmux
-
-cd ~/.tmux
-git clone https://github.com/tmux-plugins/tmux-logging
-git clone https://github.com/tmux-plugins/tmux-online-status
-git clone https://github.com/tmux-plugins/tmux-pain-control
-git clone https://github.com/tmux-plugins/tmux-sensible
-git clone https://github.com/tmux-plugins/tmux-yank
 
 ## And now for pip3 and pwntools
 #

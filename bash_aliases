@@ -1,14 +1,16 @@
-neofetch
+HISTCONTROL=ignoreboth
 
+export EDITOR=vim
+export VISUAL_EDITOR=vim
 
 # alias
+alias g='grep -i -r'
 alias ls="ls --color"
 alias vi="vim"
 alias shred="shred -zf"
 alias python="python2"
 alias wget="wget -U 'noleak'"
 alias curl="curl --user-agent 'noleak'"
-alias burppro='java -jar ~/BurpPro/burpsuite_pro_v2.1.04.jar &'
 
 alias g='grep -i'
 
@@ -24,7 +26,6 @@ then
 	xrdb -merge ~/.Xdefaults
     fi
 fi
-
 
 
 test -s ~/.alias && . ~/.alias || true
@@ -157,4 +158,142 @@ unset color20
 unset color21
 unset color_foreground
 unset color_background
+
+
+
+
+alias vi=vim
+alias nc=ncat
+alias jtr='john --wordlist=/usr/share/wordlists/rockyou.txt  jtr'
+alias msf_start='systemctl start postgresql; msfdb start; msfconsole'
+alias ht='hydra -P /usr/share/wordlists/rockyou.txt '
+alias tmux="tmux attach || tmux new"
+alias axel="axel -a"
+alias screen="screen -xRR"
+alias mkdir="mkdir -pv"
+alias ports="netstat -tulanp"
+alias header="curl -I"
+# alias nmap="nmap --reason --open"
+alias aircrack-ng="aircrack-ng -z"
+alias airodump-ng="airodump-ng --manufacturer --wps --uptime"
+alias msfc="systemctl start postgresql; msfdb start; msfconsole -q \"$@\""
+alias openvas="openvas-stop; openvas-start; sleep 3; xdg-open https://127.0.0.1:9392/ >/dev/null 2>&1"
+alias wwwroot="cd /var/www/"
+alias ftproot="cd /var/ftp/"
+alias tftproot="cd /tftp/"
+alias tftpd='atftpd --daemon --port 69 /tftp/'
+alias sambaroot="cd /var/samba/"
+alias vmroot="cd /mnt/hgfs/"
+alias exdb="cd /usr/share/exploitdb/platforms/"
+alias wordlist="cd /usr/share/wordlist/"
+alias webserver='python2 -m SimpleHTTPServer 80'
+alias webserver-py3='python3 -m http.server 80'
+alias webserver-php='php -S 0.0.0.0:80'
+alias ftpserver='twistd -n ftp -r . -p 21'
+alias ftpserver2='python -m pyftpdlib'
+alias rsg='/root/amitag/git/tools/Shells/rsg/rsg $(ip -o -4 address show dev tun0|sed "s/.*net \(.*\)\/.*/\1/") 9009'
+alias ghidra='/root/amitag/tools/ghidra_9.0/ghidraRun'
+alias install-all='apt-mark showauto | xargs apt-get install'
+alias dirsearch='cd ~/amitag/git/tools/Recon/dirsearch; python3 dirsearch.py '
+alias smbserver='python /usr/share/doc/python-impacket/examples/smbserver.py -smb2support -username amitag -password aaa amitag .'
+
+alias g='grep -i -r '
+alias ffnp='/usr/bin/firefox-esr --ProfileManager --no-remote'
+alias ffp='/usr/bin/firefox-esr --ProfileManager'
+
+ex() {
+    if [[ -f $1 ]]; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1  ;;
+            *.tar.gz)    tar xzf $1  ;;
+            *.bz2)       bunzip2 $1  ;;
+            *.rar)       rar x $1    ;;
+            *.gz)        gunzip $1   ;;
+            *.tar)       tar xf $1   ;;
+            *.tbz2)      tar xjf $1  ;;
+            *.tgz)       tar xzf $1  ;;
+            *.zip)       unzip $1    ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1     ;;
+            *)           echo $1 cannot be extracted ;;
+        esac
+    else
+        echo $1 is not a valid file
+    fi
+}
+alias msfc="systemctl start postgresql; msfdb start; msfconsole -q \"$@\""
+alias nopen="nmap --reason --open"
+
+
+unset PROMPT_COMMAND
+
+# export PS1=': \[\033[01;31m\]\u\[\033[00m\]@\t $?  \[\033[01;34m\]\w\[\033[00m\]; '
+export PS1='\[\033[01;32m\]\u@\h \[\033[00;31m\]\W \$ \[\033[00m\]'
+alias xss='xsser -s --threads 15 --timeout 30 --retries 1 --delay 0 --auto --Onm --Ifr --Coo --Xsa --Xsr --Dcp --Dom --Ind --reverse-check --silent --all'
+alias gobust='gobuster -w /usr/share/seclists/Discovery/Web_Content/common.txt -l -s "200,204,301,302,307,403,500" -u '
+alias ss='import png:- |xclip -selection clipboard -t image/png'
+alias countdown='for i in {1..120}; do printf "%03d\r" $i; sleep 1; done'
+alias xclip='xclip -selection clipboard'
+alias stegsolve='java -jar /root/amitag/tools/stegsolve.jar'
+alias ffuf='cd /root/amitag/git/tools/Scanning/ffuf; ./ffuf'
+
+wfuzz-beast()
+{
+    wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/megabeast.txt --hc 400,403,404,000 --hw 4  -H "User-Agent: Mozilla"  "$1/FUZZ"
+}
+
+function urlencode() {
+    # urlencode <string>
+    hURL -U "$1" -s --nocolor
+    return;
+    old_lc_collate=$LC_COLLATE
+    LC_COLLATE=C
+
+    local length="${#1}"
+    for (( i = 0; i < length; i++ )); do
+        local c="${1:i:1}"
+        case $c in
+            [a-zA-Z0-9.~_-]) printf "$c" ;;
+            *) printf '%%%02X' "'$c" ;;
+        esac
+    done
+
+    LC_COLLATE=$old_lc_collate
+}
+
+function urldecode() {
+    # urldecode <string>
+
+    local url_encoded="${1//+/ }"
+    printf '%b' "${url_encoded//%/\\x}"
+}
+
+function f()
+{
+    find . -iname '*'"$1"'*' $2
+}
+
+function mcd()
+{
+    mkdir -p $1
+    cd $1
+}
+
+# neofetch
+# screenfetch
+
+
+cat <<'EOF'
+
+       __
+      /\ \
+   __ \ \ \/'\      __
+ /'__'\\ \ , <    /'__'\
+/\ \L\.\\ \ \\'\ /\ \L\.\_
+\ \__/.\_\ \_\ \_\ \__/.\_\
+ \/__/\/_/\/_/\/_/\/__/\/_/
+
+
+
+EOF
 
