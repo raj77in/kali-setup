@@ -44,6 +44,9 @@ apt autoremove
 apt autoclean
 apt install -y tmux-themepack-jimeh fonts-powerline fonts-font-awesome exploitdb-papers neofetch ack
 
+## Some tools for documentation
+apt install -y xclip pandoc wkhtmltopdf
+
 
 ## And now for pip3 and pwntools
 #
