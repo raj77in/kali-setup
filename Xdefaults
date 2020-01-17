@@ -67,7 +67,7 @@ xterm*geometry: 90x30
 !! aka !
 !! Extensions
 
-URxvt*perl-lib: /usr/lib/urxvt/perl
+URxvt*perl-lib: /usr/lib/x86_64-linux-gnu/urxvt/perl
 URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select,digital-clock
 !! URxvt.colorUL:		#4682B4
 !! url-select

@@ -14,7 +14,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Fri Nov 29, 2019  12:32PM
+# Last modified: Fri Jan 17, 2020  01:54PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -33,18 +33,32 @@ echo "Check if bashrc sources ~/.bash_aliases, if not source the same"
 
 
 # ln -s kali-setup/config/.bashrc
-ln -s $PWD/Xdefaults .Xdefaults
-ln -s $PWD/funcs .funcs
-ln -s $PWD/inputrc .inputrc
-ln -s $PWD/vimrc .vimrc
-ln -s $PWD/bash_aliases .bash_aliases
-ln -s $PWD/colorcombo .colorcombo
-ln -s $PWD/tmux.conf .tmux.conf
+ln -s $PWD/Xdefaults ~/.Xdefaults
+ln -s $PWD/bash.d/bash_profile ~/.bash_profile
+echo "Add the following to .bashrc"
+echo "[[ -r ~/.bash_profile ]] && source ~/.bash_profile"
+ln -s $PWD/bash.d/funcs ~/.funcs
+ln -s $PWD/bash.d/alias ~/.alias
+ln -s $PWD/my ~/.my
+ln -s $PWD/inputrc ~/.inputrc
+ln -s $PWD/dotfiles/vim ~/.vim
+ln -s $PWD/vimrc ~/.vimrc
+ln -s $PWD/colorcombo ~/.colorcombo
+ln -s $PWD/tmux.conf ~/.tmux.conf
 ## Some useful tmux plugins ...
 ln -s $PWD/tmux ~/.tmux
 ln -s $PWD/rofi-config ~/.config/rofi/config
 ln -s $PWD/Xdefaults ~/.Xdefaults
+ln -s $PWD/Xdefaults ~/.Xresources
 ln -s $PWD/urxvt-resize-font/resize-font /usr/lib/x86_64-linux-gnu/urxvt/perl/
+ln -s $PWD/gdbinit ~/.gdbinit
+ln -s $PWD/netrc ~/.netrc
+ln -s $PWD/Burp ~/.Burp
+ln -s $PWD/my/gitconfig ~/.gitconfig
+ln -s $PWD/rofi-config .config/rofi/config
+ln -s $PWD/i3 .config/i3
+ln -s $PWD/kitty .config/kitty
+
 
 
 

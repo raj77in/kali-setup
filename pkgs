@@ -43,3 +43,7 @@ kitty
 ttf-bitstream-vera
 texlive-fonts-extra
 fonts-inconsolata
+
+## tmux
+tmux
+tmux-themepack-jimeh
