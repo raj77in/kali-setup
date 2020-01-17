@@ -47,3 +47,8 @@ fonts-inconsolata
 ## tmux
 tmux
 tmux-themepack-jimeh
+
+## Some better alternatives
+glances 
+most
+htop

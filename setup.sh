@@ -14,15 +14,36 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Fri Jan 17, 2020  01:54PM
+# Last modified: Fri Jan 17, 2020  02:21PM
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
+function dfonts()
+{
+    cd ~/.fonts
+    U="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/"
+    wget "$U/$1"
+    unzip $1
+    rm -rf $1
+}
 
-git clone --recurse-submodules -j8 https://github.com/raj77in/kali-setup
-cd 
+function download_fonts()
+{
+    dfonts FiraCode.zip
+    dfonts BigBlueTerminal.zip
+    dfonts FiraMono.zip
+    dfonts Hack.zip
+}
+
+#git clone --recurse-submodules -j8 https://github.com/raj77in/kali-setup
+
+## Fonts
+[[ ! -d ~/.fonts ]] && mkdir ~/.fonts
+cd ~/.fonts
+download_fonts
+cd
 
 ## Install all packages
 

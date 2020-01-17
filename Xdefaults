@@ -126,7 +126,8 @@ rofi.width:		30
 !! aka ! *.font: xft:terminus:10
 !! URxvt.font: xft:SFNS Display:style=Regular
 !! URxvt.font: xft:Ubuntu Nerd Font Mono:style=Regular:size=8
-URxvt.font: xft:Inconsolata:8:style=Regular:size=8
+!! URxvt.font: xft:Fira Code:8:style=Regular:size=8
+URxvt.font: xft:Hack NF:style=Regular:size=8
 !! urxvt.font: xft:Cousine NF:pixelsize=12
 !! aka !
 !! aka !
@@ -444,7 +445,7 @@ URxvt*depth: 256
 ! Turn on/off ISO 14755 5.2 mode (default enabled).
 ! URxvt*iso14755_52: boolean
 
-#include "/root/amitag/config/Xdefaults-urxvt"
+!! #include "/root/amitag/config/Xdefaults-urxvt"
 ! #include "/root/amitag/Dropbox/out/monokai.dark.xdefaults"
 !! #include "/root/amitag/Dropbox/out/zenburn.xdefaults"
 !! #include "/root/amitag/config/Xdefaults-urxvtconfig"
