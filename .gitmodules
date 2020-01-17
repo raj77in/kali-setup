@@ -16,3 +16,6 @@
 [submodule "tmux/tmux-yank"]
 	path = tmux/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank
+[submodule "urxvt-resize-font"]
+	path = urxvt-resize-font
+	url = https://github.com/simmel/urxvt-resize-font
