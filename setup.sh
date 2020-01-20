@@ -14,7 +14,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Fri Jan 17, 2020  02:21PM
+# Last modified: Mon Jan 20, 2020  10:59PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -79,6 +79,7 @@ ln -s $PWD/my/gitconfig ~/.gitconfig
 ln -s $PWD/rofi-config .config/rofi/config
 ln -s $PWD/i3 .config/i3
 ln -s $PWD/kitty .config/kitty
+ln -s $PWD/bin .local/bin
 
 
 
