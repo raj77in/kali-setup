@@ -26,7 +26,6 @@ then
 fi
 
 
-test -s ~/.bash_profile && . ~/.bash_profile || true
 test -s ~/.alias && . ~/.alias || true
 test -s ~/.funcs && . ~/.funcs || true
 
