@@ -14,7 +14,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Mon Jan 20, 2020  10:59PM
+# Last modified: Tue Jan 21, 2020  09:50AM
 #      REVISION:  ---
 #===============================================================================
 
@@ -81,7 +81,13 @@ ln -s $PWD/i3 .config/i3
 ln -s $PWD/kitty .config/kitty
 ln -s $PWD/bin .local/bin
 
+## Setup OHMyZsh
+git clone https://github.com/ohmyzsh/ohmyzsh.git
+cd ohmyzsh/tools
+bash install.sh
 
+mkdir ~/.oh-my-zsh/custom/plugins/amitag
+echo "source ~/.bashrc" >>amitag.plugin.zsh
 
 
 ## Install some useful stuff :)
