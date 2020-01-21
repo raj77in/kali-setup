@@ -445,8 +445,3 @@ URxvt*depth: 256
 ! Turn on/off ISO 14755 5.2 mode (default enabled).
 ! URxvt*iso14755_52: boolean
 
-!! #include "/root/amitag/config/Xdefaults-urxvt"
-! #include "/root/amitag/Dropbox/out/monokai.dark.xdefaults"
-!! #include "/root/amitag/Dropbox/out/zenburn.xdefaults"
-!! #include "/root/amitag/config/Xdefaults-urxvtconfig"
-#include "/root/amitag/Dropbox/out/isotope.dark.xdefaults"
