@@ -5,7 +5,8 @@
 # 
 #         USAGE: ./setup.sh 
 # 
-#   DESCRIPTION: 
+#   DESCRIPTION: Script to setup kali machine.
+#                My blog: https://blog.amit-agarwal.co.in, https://blog.aka.rocks
 # 
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
@@ -14,7 +15,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Tue Jan 21, 2020  04:14PM
+# Last modified: Wed Jan 22, 2020  02:05PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -25,9 +26,12 @@ function dfonts()
 {
     cd ~/.fonts
     U="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/"
-    wget "$U/$1"
+    # Ensure we do not download the file again or if left in between then
+    # continue from there.
+    wget -nc -c "$U/$1"
     unzip $1
-    rm -rf $1
+    # Leave the zip files, can be useful
+    # rm -rf $1
 }
 
 function download_fonts()
@@ -40,18 +44,25 @@ function download_fonts()
 
 function create_link()
 {
-    if [[ -d $HOME/$2 || -f $HOME/$2 || -L $HOME/$2 ]] 
+    dest=$HOME/$2
+    if [[ -d $dest || -f $dest || -L $dest ]] 
     then
         [[ ! -d ~/kali-setup-backup-files ]] && mkdir ~/kali-setup-backup-files
-        mv $HOME/$2 ~/kali-setup-backup-files
+        # Backup the files only first time.
+        if [[ ! -r $dest ]] 
+        then
+            [[ ! -d $(dirname $dest) ]] && mkdir $(dirname $dest)
+            mv $dest ~/kali-setup-backup-files
+        else
+            rm $dest
+        fi
     fi
-    ln -s $script_path/$1 $HOME/$2
+    ln -s $script_path/$1 $dest
 }
 
 #git clone --recurse-submodules -j8 https://github.com/raj77in/kali-setup
 echo "Check if bashrc sources ~/.bash_aliases, if not source the same"
 [[ ! -d ~/.config/rofi ]] && mkdir ~/.config/rofi
-
 [[ ! -d $script_path/my ]] && mkdir -p $script_path/my/bash
 echo 'echo "customize here :: $0"'> $script_path/my/bash/00-default.sh
 
@@ -84,21 +95,21 @@ create_link i3 .config/i3
 create_link kitty .config/kitty
 create_link bin .local/bin
 
+
 ## Fonts
 [[ ! -d ~/.fonts ]] && mkdir ~/.fonts
 cd ~/.fonts
-# download_fonts
-cd
+download_fonts
+# Once the fonts are downlaoded to the fonts folder, refresh cache'
+fc-cache
 
+
+# update apt cache
+apt update -y
 ## Install all packages
-
 apt install -y $(grep -v '^#' pkgs|tr '\n' ' ')
 
-
-
 ## Install some useful stuff :)
-
-apt update -y
 # apt autoremove -y
 apt autoclean -y
 apt install -y tmux-themepack-jimeh fonts-powerline fonts-font-awesome exploitdb-papers neofetch ack
@@ -116,8 +127,6 @@ apt install -y xclip pandoc wkhtmltopdf
 apt install -y kitty
 
 ## And now for pip3 and pwntools
-#
 apt install -y python3-pip
 pip3 install --user pwntools
-
 
