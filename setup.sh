@@ -15,7 +15,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Wed Jan 22, 2020  02:05PM
+# Last modified: Thu Jan 23, 2020  10:14PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -127,6 +127,6 @@ apt install -y xclip pandoc wkhtmltopdf
 apt install -y kitty
 
 ## And now for pip3 and pwntools
-apt install -y python3-pip
+apt install -y python3-pip pipenv
 pip3 install --user pwntools
 
