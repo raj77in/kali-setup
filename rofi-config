@@ -1,10 +1,7 @@
-# rofi.theme:	    ~/.cache/wal/colors-rofi-light.rasi
 rofi.combi-modi:    window,run,ssh
 rofi.font:          hack 10
 rofi.modi:          run,ssh,window
 rofi.lines:	    10
 rofi.columns:	    4
 rofi.color-enabled: true
-
-
-rofi.theme: /usr/share/rofi/themes/gruvbox-dark-soft.rasi
+rofi.theme: /usr/share/rofi/themes/gruvbox-light-soft.rasi
