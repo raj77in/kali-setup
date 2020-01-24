@@ -15,7 +15,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Wed Jan 22, 2020  02:05PM
+# Last modified: Thu Jan 23, 2020  10:14PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -63,6 +63,7 @@ function create_link()
 #git clone --recurse-submodules -j8 https://github.com/raj77in/kali-setup
 echo "Check if bashrc sources ~/.bash_aliases, if not source the same"
 [[ ! -d ~/.config/rofi ]] && mkdir ~/.config/rofi
+
 [[ ! -d $script_path/my ]] && mkdir -p $script_path/my/bash
 echo 'echo "customize here :: $0"'> $script_path/my/bash/00-default.sh
 
@@ -95,7 +96,6 @@ create_link i3 .config/i3
 create_link kitty .config/kitty
 create_link bin .local/bin
 
-
 ## Fonts
 [[ ! -d ~/.fonts ]] && mkdir ~/.fonts
 cd ~/.fonts
@@ -107,9 +107,14 @@ fc-cache
 # update apt cache
 apt update -y
 ## Install all packages
+
 apt install -y $(grep -v '^#' pkgs|tr '\n' ' ')
 
+
+
 ## Install some useful stuff :)
+
+apt update -y
 # apt autoremove -y
 apt autoclean -y
 apt install -y tmux-themepack-jimeh fonts-powerline fonts-font-awesome exploitdb-papers neofetch ack
@@ -127,6 +132,8 @@ apt install -y xclip pandoc wkhtmltopdf
 apt install -y kitty
 
 ## And now for pip3 and pwntools
+#
 apt install -y python3-pip
 pip3 install --user pwntools
+
 
