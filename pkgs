@@ -55,3 +55,6 @@ htop
 
 ## misc packages
 exuberant-ctags
+
+# better than nc
+ncat
