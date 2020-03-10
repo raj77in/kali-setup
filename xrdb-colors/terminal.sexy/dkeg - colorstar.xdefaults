@@ -1,0 +1,30 @@
+*foreground:	#d3d3d3
+*background:	#000000
+
+!! Color - 0
+*color0:	#03010f
+*color8:	#03010f
+
+!! Color - 1
+*color1:	#503b43
+*color9:	#503b43
+
+!! Color - 2
+*color2:	#353b64
+*color10:	#353b64
+
+!! Color - 3
+*color3:	#8c2424
+*color11:	#8c2424
+
+!! Color - 4
+*color4:	#6067ac
+*color12:	#6067ac
+
+!! Color - 5
+*color5:	#624d19
+*color13:	#624d19
+
+!! Color - 6
+*color6:	#7c83c0
+*color14:	#7c83c0

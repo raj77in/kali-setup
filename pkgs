@@ -55,3 +55,9 @@ htop
 
 ## misc packages
 exuberant-ctags
+
+# better than nc
+ncat
+
+# need for url encode/decode
+hurl
