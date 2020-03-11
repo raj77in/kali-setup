@@ -152,10 +152,10 @@ URxvt*urgentOnBell: false
 URxvt*visualBell: true
 URxvt*mapAlert: true
 URxvt*mouseWheelScrollPage: true
-URxvt*background: Black
-URxvt*foreground: White
-URxvt*colorUL: yellow
-URxvt*underlineColor: yellow
+## removed URxvt*background: Black
+## removed URxvt*foreground: White
+## removed URxvt*colorUL: yellow
+## removed URxvt*underlineColor: yellow
 ! URxvt*font: -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
 !! URxvt*font: xft:FuraCode NF:8:style=Regular
 ! URxvt*font: xft:FontAwesome:style=Regular:size=10,
