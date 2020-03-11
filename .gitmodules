@@ -19,9 +19,6 @@
 [submodule "urxvt-resize-font"]
 	path = urxvt-resize-font
 	url = https://github.com/simmel/urxvt-resize-font
-[submodule "dotfiles"]
-	path = dotfiles
-	url = https://github.com/raj77in/dotfiles
 [submodule "kitty/kitty-themes"]
 	path = kitty/kitty-themes
 	url = https://github.com/dexpota/kitty-themes.git
