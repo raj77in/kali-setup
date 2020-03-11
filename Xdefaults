@@ -1,4 +1,4 @@
-
+#include "/root/kali-setup/xrdb-colors/colors"
 XTerm*dynamicColors: true
 URxvt*dynamicColors: on
 
@@ -10,24 +10,24 @@ Xft.autohint: true
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 
-xterm*background:  #3f3f3f
-xterm*foreground:  #dcdccc
-xterm*color0:      #1E2320
-xterm*color1:      #705050
-xterm*color2:      #60b48a
-xterm*color3:      #dfaf8f
-xterm*color4:      #506070
-xterm*color5:      #dc8cc3
-xterm*color6:      #8cd0d3
-xterm*color7:      #dcdccc
-xterm*color8:      #709080
-xterm*color9:      #dca3a3
-xterm*color10:     #c3bf9f
-xterm*color11:     #f0dfaf
-xterm*color12:     #94bff3
-xterm*color13:     #ec93d3
-xterm*color14:     #93e0e3
-xterm*color15:     #ffffff
+!! removed xterm*background:  #3f3f3f
+!! removed xterm*foreground:  #dcdccc
+!! removed xterm*color0:      #1E2320
+!! removed xterm*color1:      #705050
+!! removed xterm*color2:      #60b48a
+!! removed xterm*color3:      #dfaf8f
+!! removed xterm*color4:      #506070
+!! removed xterm*color5:      #dc8cc3
+!! removed xterm*color6:      #8cd0d3
+!! removed xterm*color7:      #dcdccc
+!! removed xterm*color8:      #709080
+!! removed xterm*color9:      #dca3a3
+!! removed xterm*color10:     #c3bf9f
+!! removed xterm*color11:     #f0dfaf
+!! removed xterm*color12:     #94bff3
+!! removed xterm*color13:     #ec93d3
+!! removed xterm*color14:     #93e0e3
+!! removed xterm*color15:     #ffffff
 !! aka !
 XTerm*vt100.renderFont: true
 XTerm*faceName: Liberation Mono
@@ -37,29 +37,29 @@ xterm*geometry: 90x30
 !! aka !
 !! aka !
 !! Appearance
-*color0: #1b1918
-*color8: #766e6b
-!! red
-*color1: #f22c40
-*color9: #f22c40
-!! green
-*color2: #5ab738
-*color10: #5ab738
-!! yellow
-*color3: #d5911a
-*color11: #d5911a
-!! blue
-*color4: #407ee7
-*color12: #407ee7
-!! magenta
-*color5: #6666ea
-*color13: #6666ea
-!! cyan
-*color6: #00ad9c
-*color14: #00ad9c
-!! white
-*color7: #a8a19f
-*color15: #f1efee
+!! removed *color0: #1b1918
+!! removed *color8: #766e6b
+!! removed !! red
+!! removed *color1: #f22c40
+!! removed *color9: #f22c40
+!! removed !! green
+!! removed *color2: #5ab738
+!! removed *color10: #5ab738
+!! removed !! yellow
+!! removed *color3: #d5911a
+!! removed *color11: #d5911a
+!! removed !! blue
+!! removed *color4: #407ee7
+!! removed *color12: #407ee7
+!! removed !! magenta
+!! removed *color5: #6666ea
+!! removed *color13: #6666ea
+!! removed !! cyan
+!! removed *color6: #00ad9c
+!! removed *color14: #00ad9c
+!! removed !! white
+!! removed *color7: #a8a19f
+!! removed *color15: #f1efee
 !! aka !
 !! aka !
 ! change to red background
