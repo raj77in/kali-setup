@@ -178,7 +178,7 @@ function exitstatus ()
     fi
 }
 
-export PS1=': $(exitstatus) \[\e[0m\]\[\e[48;5;236m\]\[\e[38;5;197m\]me\[\e[38;5;197m\]@\[\e[38;5;197m\]lappy\[\e[38;5;105m\] \[\e[38;5;221m\]\W\[\e[38;5;221m\] ;\e[0m\]'
+export PS1=': $(exitstatus) \[\e[0m\]\[\e[48;5;236m\]\[\e[38;5;197m\]me\[\e[38;5;197m\]@\[\e[38;5;197m\]$(hostname)\[\e[38;5;105m\] \[\e[38;5;221m\]\W\[\e[38;5;221m\] ;\e[0m\]'
 
 # neofetch
 # screenfetch
