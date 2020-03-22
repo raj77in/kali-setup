@@ -183,6 +183,7 @@ export PS1=': $(exitstatus) \[\e[0m\]\[\e[48;5;236m\]\[\e[38;5;197m\]me\[\e[38;5
 # neofetch
 # screenfetch
 
+bash $($(dirname $(realpath $0));pwd)/kali-setup/shell-color-scripts/randomcolors.sh
 
 cat <<'EOF'
 
