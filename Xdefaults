@@ -1,4 +1,4 @@
-#include "/root/kali-setup/xrdb-colors/colors"
+!! #include "/root/kali-setup/xrdb-colors/colors"
 XTerm*dynamicColors: true
 URxvt*dynamicColors: on
 

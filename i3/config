@@ -14,8 +14,10 @@
 # Needed for i3-gaps
 # set $TERMINAL /usr/bin/kitty
 # set $term /usr/bin/kitty
-set $term /usr/bin/urxvtc
-set $TERMINAL /usr/bin/urxvtc
+#set $term /usr/bin/urxvtc
+#set $TERMINAL /usr/bin/urxvtc
+set $term /usr/local/bin/st
+set $TERMINAL /usr/local/bin/st
 # set $TERMINAL gnome-terminal
 for_window [class="^.*"] border pixel 2
 gaps inner 15
@@ -520,7 +522,7 @@ exec --no-startup-id /usr/bin/urxvtd
 exec --no-startup-id compton --config ~/.config/i3/compton.conf
 # exec --no-startup-id compton
 # Merge my defauls for X windows.
-exec --no-startup-id xrdb -merge ~/.Xdefaults
+exec --no-startup-id f=$(cd /root/kali-setup/xrdb-colors; find . -type f -name \*xdefaults|sort -R|head -1); xrdb -merge ~/.Xdefaults; cd /root/kali-setup/xrdb-colors/$(dirname $f); xrdb -merge $(basename $f)
 ## Start all my applications
 exec --no-startup-id nm-applet &
 # exec firefox --new-window https://www.hackthebox.eu/home
