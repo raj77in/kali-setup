@@ -43,6 +43,7 @@ kitty
 ttf-bitstream-vera
 texlive-fonts-extra
 fonts-inconsolata
+fonts-cascadia-code
 
 ## tmux
 tmux
