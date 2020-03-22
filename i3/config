@@ -281,8 +281,6 @@ bar {
     # status_command i3status -c ~/.config/i3/i3-status.conf | dzen2 -fg white -ta r -w 1280 \
     # -fn "-misc-fixed-medium-r-normal--13-120-75-75-C-70-iso8859-1"
      colors {
-     	                background $darkblack
-                        #statusline $darkwhite
                         separator $cyan
                         focused_workspace  $blue $darkblue $darkblack
                         active_workspace   $blue $blue $darkwhite
