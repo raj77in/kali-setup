@@ -44,3 +44,6 @@
     bigfiles=!git ls-tree -r -t -l --full-name HEAD | sort -n -k 4 | tail -n 10
     rmignfiles=!git rm --cached `git ls-files -i -X .gitignore`
     pg = !git add -A . && git commit -a && git push github master
+[user]
+	name = Amit Agarwal
+	email = raj77in

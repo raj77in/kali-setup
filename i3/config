@@ -14,10 +14,10 @@
 # Needed for i3-gaps
 # set $TERMINAL /usr/bin/kitty
 # set $term /usr/bin/kitty
-#set $term /usr/bin/urxvtc
-#set $TERMINAL /usr/bin/urxvtc
-set $term /usr/local/bin/st
-set $TERMINAL /usr/local/bin/st
+set $term /usr/bin/urxvtc
+set $TERMINAL /usr/bin/urxvtc
+# set $term /usr/local/bin/st
+# set $TERMINAL /usr/local/bin/st
 # set $TERMINAL gnome-terminal
 for_window [class="^.*"] border pixel 2
 gaps inner 15
@@ -265,12 +265,6 @@ client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
-#                       BORDER          BACKGROUND      TEXT            INDICATOR   CHILD_BORDER
-## client.focused          $red            $red            $magenta        $darkmagenta            $darkblue
-## client.unfocused        $transparent    $blue           $white          $darkblue               $darkblack
-## client.focused_inactive $transparent    $blue           $white          $darkblue               $darkblack
-## client.urgent           $darkred        $darkred        $black          $darkred                $darkred
-## client.background $black
 
 
 
@@ -288,6 +282,15 @@ bar {
                         active_workspace   $blue $blue $darkwhite
                         inactive_workspace $darkblack $darkblack $white
                         urgent_workspace   $darkblack $darkblack $white
+			background #000000
+			statusline #2E9AFE
+			separator #00000
+#Bord #Back #Text
+			focused_workspace #2E9AFE #cccccc #2E9AFE
+			active_workspace #2E9AFE #444444 #2E9AFE
+			inactive_workspace #2E9AFE #000000 #2E9AFE
+			urgent_workspace #2E9AFE #000000 #900000
+
      }
      mode dock
      modifier None
