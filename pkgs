@@ -44,6 +44,11 @@ ttf-bitstream-vera
 texlive-fonts-extra
 fonts-inconsolata
 fonts-cascadia-code
+node-emojis-list
+fonts-noto-color-emoji
+ttf-symbola
+ttf-joypixels
+ttf-twemoji-color
 
 ## tmux
 tmux

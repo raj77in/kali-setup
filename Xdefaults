@@ -127,13 +127,25 @@ rofi.width:		30
 !! URxvt.font: xft:SFNS Display:style=Regular
 !! URxvt.font: xft:Ubuntu Nerd Font Mono:style=Regular:size=8
 !! URxvt.font: xft:Fira Code:8:style=Regular:size=8
-URxvt.font: xft:Hack NF:style=Regular:size=8
+!! URxvt.font: xft:Hack NF:style=Regular:size=8, xft:Noto Color Emoji:minspace=False
+URxvt.letterSpace: -1
+#define font1         Hack NF
+#define font2         Noto Color Emoji
+#define font3         DejaVu Serif
+#define font4         Fira Code
+
+URxvt*letterSpace: 0
+URxvt*font:           xft:font1:pixelsize=16:size=8:style=Regular, xft:font2:pixelsize=14:minspace=false:style=Regular:size=8, xft:font3:pixelsize=14,xft:font4:pixelsize=14
+URxvt*boldFont:       xft:font1:bold:pixelsize=16, xft:font2:pixelsize=14:minspace=False,xft:font3:pixelsize=14,xft:font4:pixelsize=14
+URxvt*italicFont:     xft:font1:italic:pixelsize=16, xft:font2:pixelsize=14:minspace=False,xft:font3:pixelsize=14,xft:font4:pixelsize=14
+URxvt*boldItalicFont: xft:font1:bold:italic:pixelsize=16, xft:font2:pixelsize=14:minspace=False, xft:font3:pixelsize=14, xft:font4:pixelsize=14
+
 !! urxvt.font: xft:Cousine NF:pixelsize=12
 !! aka !
 !! aka !
 !! aka !
 !
-URxvt*termName: screen-256color
+URxvt*termName: rxvt-unicode-256color
 URxvt*loginShell: true
 URxvt*scrollColor: #777777
 URxvt*scrollstyle: plain
@@ -161,9 +173,9 @@ URxvt*mouseWheelScrollPage: true
 ! URxvt*font: xft:FontAwesome:style=Regular:size=10,
 ! xft:Inconsolata:8:style=Regular
 
-URxvt*boldFont: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
-URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
-URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
+!! URxvt*boldFont: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
+!! URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
+!! URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
 URxvt*saveLines: 50000
 URxvt*buffered: true
 URxvt*hold: false
