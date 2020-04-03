@@ -107,7 +107,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -270,6 +270,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 
 bar {
+    position top
     height 25
     status_command py3status  -c /root/.config/i3/i3status.conf
     # status_command i3blocks  -c ~/.config/i3/i3blocks.conf
@@ -545,8 +546,8 @@ exec --no-startup-id urxvt -name scratchpad_urxvt
 bindsym $mod+Shift+o exec urxvtc --loginShell --color1 Orange -name raj77in.sh -e ~/amitag/CTF/hackthebox/raj77in.sh
 # bindsym $mod+Shift+o exec urxvtc -fg Orange -name raj77in.sh -e ~/amitag/OSWE/raj77in.sh
 #
-bindsym $mod+Shift+i exec $term -e /root/amitag/tools/rofi-fontawesome
-bindsym $mod+Shift+` exec $term -e /root/kali-setup/scripts/rofi-emoji
+bindsym $mod+Shift+i exec /root/amitag/tools/rofi-fontawesome
+bindsym $mod+e exec /root/kali-setup/scripts/rofi-emoji
 bindsym $mod+p exec $term -e /root/amitag/tools/rev-shells.sh
 # bindsym $mod+q exec $term -e /root/amitag/tools/rofi-tips
 bindsym $mod+shift+n exec variety -n

@@ -128,14 +128,12 @@ rofi.width:		30
 !! URxvt.font: xft:Ubuntu Nerd Font Mono:style=Regular:size=8
 !! URxvt.font: xft:Fira Code:8:style=Regular:size=8
 !! URxvt.font: xft:Hack NF:style=Regular:size=8, xft:Noto Color Emoji:minspace=False
-URxvt.letterSpace: -1
 #define font1         Hack NF
 #define font2         Noto Color Emoji
-#define font3         DejaVu Serif
-#define font4         Fira Code
+#define font3         Twitter Color Emoji
+#define font4         BitStream Vera
 
-URxvt*letterSpace: 0
-URxvt*font:           xft:font1:pixelsize=16:size=8:style=Regular, xft:font2:pixelsize=14:minspace=false:style=Regular:size=8, xft:font3:pixelsize=14,xft:font4:pixelsize=14
+*font:           xft:font1:pixelsize=16:size=8:style=Regular, xft:font2:pixelsize=14:minspace=false:style=Regular:size=8, xft:font3:pixelsize=14,xft:font4:pixelsize=14
 URxvt*boldFont:       xft:font1:bold:pixelsize=16, xft:font2:pixelsize=14:minspace=False,xft:font3:pixelsize=14,xft:font4:pixelsize=14
 URxvt*italicFont:     xft:font1:italic:pixelsize=16, xft:font2:pixelsize=14:minspace=False,xft:font3:pixelsize=14,xft:font4:pixelsize=14
 URxvt*boldItalicFont: xft:font1:bold:italic:pixelsize=16, xft:font2:pixelsize=14:minspace=False, xft:font3:pixelsize=14, xft:font4:pixelsize=14
