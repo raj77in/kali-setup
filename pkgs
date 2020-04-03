@@ -67,3 +67,7 @@ ncat
 
 # need for url encode/decode
 hurl
+
+## Other important packages.
+seclists
+uniscan
