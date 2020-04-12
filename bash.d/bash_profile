@@ -172,13 +172,17 @@ unset PROMPT_COMMAND
 function exitstatus ()
 {
     if [[ $? == 0 ]]; then
-        printf "\033[0;32m\033[0m";
+        # printf "\033[0;32m😄\033[0m";
+        printf "😄";
+        # printf "";
     else
-        printf "\033[0;31m( $? )\033[0m";
+        # printf "\033[0;31m😥($?)\033[0m";
+        printf "😥($?)";
+        # printf "($?)";
     fi
 }
 
-export PS1=': $(exitstatus) me@\h \W ; '
+export PS1=':$(exitstatus) me@\h \W ; '
 
 # neofetch
 # screenfetch

@@ -16,6 +16,7 @@
 # set $term /usr/bin/kitty
 set $term /usr/bin/urxvtc
 set $TERMINAL /usr/bin/urxvtc
+# set $TERMINAL /usr/bin/kitty
 # set $term /usr/local/bin/st
 # set $TERMINAL /usr/local/bin/st
 # set $TERMINAL gnome-terminal
@@ -273,29 +274,23 @@ bar {
     position top
     height 25
     status_command py3status  -c /root/.config/i3/i3status.conf
-    # status_command i3blocks  -c ~/.config/i3/i3blocks.conf
-    # status_command ~/.config/i3/i3blocks-bar/i3blocks  -c ~/.config/i3/i3blocks-bar/config
-    # status_command i3status -c ~/.config/i3/i3-status-arch.conf
-    # status_command i3status -c ~/.config/i3/i3-status.conf | dzen2 -fg white -ta r -w 1280 \
-    # -fn "-misc-fixed-medium-r-normal--13-120-75-75-C-70-iso8859-1"
-     colors {
-                        separator $cyan
-                        focused_workspace  $blue $darkblue $darkblack
-                        active_workspace   $blue $blue $darkwhite
-                        inactive_workspace $darkblack $darkblack $white
-                        urgent_workspace   $darkblack $darkblack $white
-			background #000000
-			statusline #2E9AFE
-			separator #00000
-#Bord #Back #Text
-			focused_workspace #2E9AFE #cccccc #2E9AFE
-			active_workspace #2E9AFE #444444 #2E9AFE
-			inactive_workspace #2E9AFE #000000 #2E9AFE
-			urgent_workspace #2E9AFE #000000 #900000
+    mode dock
+    modifier None
+    position          top
+# mode              hide
+    workspace_buttons yes
+# tray_output       none
 
-     }
-     mode dock
-     modifier None
+
+    colors {
+        background #000000
+        statusline #ffffff
+
+        focused_workspace  #ffffff #285577
+        active_workspace   #ffffff #333333
+        inactive_workspace #888888 #222222
+        urgent_workspace   #ffffff #900000
+    }
 }
 
 # sticky window
