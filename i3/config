@@ -15,8 +15,8 @@
 # set $TERMINAL /usr/bin/kitty
 # set $term /usr/bin/kitty
 set $term /usr/bin/urxvtc
-set $TERMINAL /usr/bin/urxvtc
-# set $TERMINAL /usr/bin/kitty
+# set $TERMINAL /usr/bin/urxvtc
+set $TERMINAL /usr/bin/kitty
 # set $term /usr/local/bin/st
 # set $TERMINAL /usr/local/bin/st
 # set $TERMINAL gnome-terminal
@@ -61,6 +61,7 @@ floating_modifier $mod
 # set $term gnome-terminal
 set $vterm kitty
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $vterm
 
 # kill focused window
 bindsym $mod+q kill
@@ -279,6 +280,8 @@ bar {
     position          top
 # mode              hide
     workspace_buttons yes
+# font FuraCode NF:size=9,Font Awesome
+    font xft:Hack NF:style=Regular:size=6, xft:Noto Color Emoji:minspace=False
 # tray_output       none
 
 
