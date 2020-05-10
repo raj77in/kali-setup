@@ -126,15 +126,15 @@ bindsym $mod+space focus mode_toggle
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1 "
-set $ws2 "2 "
-set $ws3 "3 "
-set $ws4 "4 "
+set $ws2 "2 🌐"
+set $ws3 "3 🗒"
+set $ws4 "4 🌎"
 set $ws5 "5 "
 set $ws6 "6 "
 set $ws7 "7 "
 set $ws8 "8 "
 set $ws9 "9 "
-set $ws10 "10 "
+set $ws10 "10 🚆"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -546,7 +546,7 @@ bindsym $mod+Shift+o exec urxvtc --loginShell --color1 Orange -name raj77in.sh -
 #
 bindsym $mod+Shift+i exec /root/amitag/tools/rofi-fontawesome
 bindsym $mod+e exec /root/kali-setup/scripts/rofi-emoji
-bindsym $mod+p exec $term -e /root/amitag/tools/rev-shells.sh
+bindsym $mod+p exec /root/kali-setup/scripts/rev-shells.sh
 # bindsym $mod+q exec $term -e /root/amitag/tools/rofi-tips
 bindsym $mod+shift+n exec variety -n
 
