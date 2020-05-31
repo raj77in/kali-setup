@@ -1,7 +1,7 @@
 rofi.combi-modi:    window,run,ssh
 rofi.font:          hack 10
-rofi.modi:          run,ssh,window
+rofi.modi:          drun,run,ssh,window
 rofi.lines:	    10
 rofi.columns:	    4
 rofi.color-enabled: true
-rofi.theme: /usr/share/rofi/themes/gruvbox-light-soft.rasi
+rofi.theme: /usr/share/rofi/themes/Pop-Dark.rasi

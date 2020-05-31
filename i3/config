@@ -125,7 +125,7 @@ bindsym $mod+space focus mode_toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1 "
+set $ws1 "1 "
 set $ws2 "2 🌐"
 set $ws3 "3 🗒"
 set $ws4 "4 🌎"
@@ -342,6 +342,7 @@ assign [class="qTox"] $ws9
 assign [class="Firefox"] $ws2
 assign [class="firefox"] $ws2
 assign [class="Cherrytree"] $ws3
+assign [class="Joplin"] $ws3
 assign [instance="raj77in.sh"] $ws10
 assign [class="Evince"] $ws5
 assign [class="XpdfReader"] $ws5
@@ -372,7 +373,7 @@ bindsym $mod+shift+p exec rofi -show ssh # -fake-transparency -lines 3 -eh 2 -wi
 bindsym $mod+u [instance="tmux"] scratchpad show; [instance="tmux"] move position center
 
 
-exec --no-startup-id terminator
+# exec --no-startup-id terminator
 for_window [class="Terminator"] floating enable;
 for_window [class="Virt-manager"] floating enable;
 for_window [class="Terminator"] move scratchpad; [class="Terminator"] scratchpad show; move position 80px 50px; move scratchpad
@@ -510,33 +511,35 @@ bindsym $mod+t exec rofi-fonts.sh
 
 # exec --no-startup-id bash ~/bin/add-screen-newmode.sh 2304 1296
 # Starts dunst for notifications:
-exec --no-startup-id xrandr --output Virtual-1 --auto --mode 1920x1080
-exec --no-startup-id dunst
+# exec --no-startup-id xrandr --output Virtual-1 --auto --mode 1920x1080
+# exec --no-startup-id dunst
 # Unclutter makes the mouse invisible after a brief period
-exec --no-startup-id unclutter
+# exec --no-startup-id unclutter
 
-exec --no-startup-id $TERMINAL -n "tmuxdd"  && i3 "[instance=\"tmuxdd\"] scratchpad show; [instance=\"tmuxdd\"] move position center
+# exec --no-startup-id $TERMINAL -n "tmuxdd"  && i3 "[instance=\"tmuxdd\"] scratchpad show; [instance=\"tmuxdd\"] move position center
 
 # startup
-exec --no-startup-id /usr/bin/urxvtd
+# exec --no-startup-id /usr/bin/urxvtd
 # exec --no-startup-id ~/bin/set-wallpaper.sh
 # exec --no-startup-id xbacklight
 
-exec --no-startup-id compton --config ~/.config/i3/compton.conf
+# exec --no-startup-id compton --config ~/.config/i3/compton.conf
 # exec --no-startup-id compton
 # Merge my defauls for X windows.
-exec --no-startup-id f=$(cd /root/kali-setup/xrdb-colors; find . -type f -name \*xdefaults|sort -R|head -1); xrdb -merge ~/.Xdefaults; cd /root/kali-setup/xrdb-colors/$(dirname $f); xrdb -merge $(basename $f)
+# exec --no-startup-id f=$(cd /root/kali-setup/xrdb-colors; find . -type f -name \*xdefaults|sort -R|head -1); xrdb -merge ~/.Xdefaults; cd /root/kali-setup/xrdb-colors/$(dirname $f); xrdb -merge $(basename $f)
 ## Start all my applications
-exec --no-startup-id nm-applet &
+# exec --no-startup-id nm-applet &
 # exec firefox --new-window https://www.hackthebox.eu/home
 # exec firefox --new-window https://chat.netsecfocus.com/nsf/channels/hack-the-box
 # exec /usr/bin/cherrytree
 # exec unclutter
 # exec --no-startup-id dropbox start
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id /root/Documents/firefox/firefox
-exec --no-startup-id /usr/bin/cherrytree
-exec --no-startup-id variety
+# exec --no-startup-id /root/Documents/firefox/firefox
+# exec --no-startup-id /usr/bin/joplin
+# exec --no-startup-id /usr/bin/cherrytree
+# exec --no-startup-id /usr/bin/joplin --no-sandbox
+# exec --no-startup-id variety
 exec --no-startup-id urxvt -name scratchpad_urxvt
 
 
