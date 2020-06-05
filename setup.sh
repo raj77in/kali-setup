@@ -117,7 +117,7 @@ apt install -y $(grep -v '^#' pkgs|tr '\n' ' ')
 apt update -y
 # apt autoremove -y
 apt autoclean -y
-apt install -y tmux-themepack-jimeh fonts-powerline fonts-font-awesome exploitdb-papers neofetch ack
+apt install -y tmux-themepack-jimeh fonts-powerline fonts-font-awesome neofetch ack
 
 ## meld diff tool, dont you just love this
 apt install -y meld

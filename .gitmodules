@@ -22,3 +22,6 @@
 [submodule "kitty/kitty-themes"]
 	path = kitty/kitty-themes
 	url = https://github.com/dexpota/kitty-themes.git
+[submodule "icons-in-terminal"]
+	path = icons-in-terminal
+	url = https://github.com/sebastiencs/icons-in-terminal
