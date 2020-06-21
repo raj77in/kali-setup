@@ -23,5 +23,7 @@ nitrogen --set-zoom-fill --random &
 udiskie &
 xset -dpms &
 xset r rate 200  60 &
+caffeine &
+caffeine-indicator &
 cd /root
-exec i3
+# exec i3
