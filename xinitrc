@@ -18,12 +18,17 @@ compton --config ~/.config/i3/compton.conf &
 f=$(cd /root/kali-setup/xrdb-colors; find . -type f -name \*xdefaults|sort -R|head -1); xrdb -merge ~/.Xdefaults; cd /root/kali-setup/xrdb-colors/$(dirname $f); xrdb -merge $(basename $f)
 nm-applet &
 /root/Documents/firefox/firefox &
-/usr/bin/joplin --no-sandbox &
+# retext &
+# /usr/bin/typora --no-sandbox
+# /usr/bin/joplin --no-sandbox &
+/usr/bin/cherrytree &
 nitrogen --set-zoom-fill --random &
 udiskie &
 xset -dpms &
 xset r rate 200  60 &
 caffeine &
 caffeine-indicator &
+xautolock --time 2 --locker 'i3lock-fancy'
+
 cd /root
 # exec i3

@@ -60,7 +60,7 @@ floating_modifier $mod
 # set $term i3-sensible-terminal
 # set $term /usr/bin/urxvtc
 # set $term gnome-terminal
-set $vterm /usr/bin/urxvtcd
+set $vterm /usr/bin/kitty
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $vterm
 
@@ -344,6 +344,7 @@ assign [class="Firefox"] $ws2
 assign [class="firefox"] $ws2
 assign [class="Cherrytree"] $ws3
 assign [class="Joplin"] $ws3
+assign [class="ReText"] $ws3
 assign [instance="raj77in.sh"] $ws10
 assign [class="Evince"] $ws5
 assign [class="XpdfReader"] $ws5
