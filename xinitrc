@@ -29,6 +29,7 @@ xset r rate 200  60 &
 caffeine &
 caffeine-indicator &
 xautolock --time 2 --locker 'i3lock-fancy'
+xfce4-power-manager &
 
 cd /root
 # exec i3

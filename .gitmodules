@@ -25,3 +25,6 @@
 [submodule "icons-in-terminal"]
 	path = icons-in-terminal
 	url = https://github.com/sebastiencs/icons-in-terminal
+[submodule "wallpapers"]
+	path = wallpapers
+	url = https://github.com/raj77in/wallpapers
