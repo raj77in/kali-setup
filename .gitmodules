@@ -28,3 +28,7 @@
 [submodule "wallpapers"]
 	path = wallpapers
 	url = https://github.com/raj77in/wallpapers
+
+[submodule "dotfiles"]
+	path =dotfiles
+	url = https://github.com/raj77in/dotfiles
