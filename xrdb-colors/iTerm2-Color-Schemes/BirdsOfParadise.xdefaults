@@ -3,7 +3,7 @@
 ! XRDB2Xreources.py
 !
 *foreground:  #e0dbb7
-*background:  #2a1f1d
+*background:  [85]#2a1f1d
 *cursorColor: #573d26
 !
 ! Black
