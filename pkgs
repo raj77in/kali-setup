@@ -79,3 +79,8 @@ breeze-cursor-theme
 chameleon-cursor-theme
 grub-theme-breeze
 plymouth-theme-hamara
+
+# Lightdm greeter and settings tools
+
+slick-greeter
+lightdm-settings

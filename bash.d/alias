@@ -38,6 +38,7 @@ alias openvas="openvas-stop; openvas-start; sleep 3; xdg-open https://127.0.0.1:
 alias oswe='cd $BASE/OSWE/'
 alias ports="netstat -tulanp"
 alias rsg='$BASE/git/tools/Shells/rsg/rsg $(ip -o -4 address show dev tun0|sed "s/.*net \(.*\)\/.*/\1/") 9009'
+alias rustscan='podman run -it --rm --name rustscan rustscan/rustscan:alpine '
 alias sambaroot="cd /var/samba/"
 alias screen="screen -xRR"
 alias searchsploit-view='less /usr/share/exploitdb/$(xclip -o)'
