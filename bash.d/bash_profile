@@ -11,7 +11,7 @@ export HISTSIZE=10000
 export EDITOR=vim
 export VISUAL_EDITOR=vim
 
-
+alias vpn-provinggrounds='cd /root/amitag/CTF/ProvingGrounds;openvpn --config vpn_config.ovpn --auth-user-pass login.conf'
 # source files
 [ -r /usr/share/bash-completion/completions ] &&
   . /usr/share/bash-completion/completions/*
