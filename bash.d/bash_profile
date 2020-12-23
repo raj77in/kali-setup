@@ -200,6 +200,8 @@ mkdir-linrecon()
 
 bash $(cd $(dirname $(realpath ${BASH_SOURCE[0]}))/..;pwd)/shell-color-scripts/randomcolors.sh
 
+eval "$(starship init bash)"
+
 cat <<'EOF'
 
        __
