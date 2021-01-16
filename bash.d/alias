@@ -60,6 +60,7 @@ alias vi=vim
 alias vmroot="cd /mnt/hgfs/"
 alias vpn-hackthebox='xterm -e "$BASE/CTF/hackthebox/raj77in.sh"&'
 alias vpn-pentester='xterm -e "$BASE/CTF/pentest.training/raj77in.sh"&'
+alias vpn-tryhackme='xterm -e "$BASE/CTF/tryhackme/raj77in.sh"&'
 alias vpn='xterm -e "$BASE/OSCP/scripts/vpn.sh"&'
 # alias vpn='xterm -e "cd $BASE/OSCP; echo $(date) START >> vpn.log; openvpn OS-29474-PWK.ovpn; echo $(date) STOP >> vpn.log;"&'
 alias webserver-php='php -S 0.0.0.0:80'
