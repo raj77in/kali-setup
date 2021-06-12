@@ -19,9 +19,9 @@ f=$(cd /root/kali-setup/xrdb-colors; find . -type f -name \*xdefaults|sort -R|he
 nm-applet &
 /root/Documents/firefox/firefox &
 # retext &
-# /usr/bin/typora --no-sandbox
+/usr/bin/typora --no-sandbox &
 # /usr/bin/joplin --no-sandbox &
-/usr/bin/cherrytree &
+# /usr/bin/cherrytree &
 nitrogen --set-zoom-fill --random &
 udiskie &
 xset -dpms &
