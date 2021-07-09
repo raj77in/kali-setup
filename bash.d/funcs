@@ -99,3 +99,7 @@ function mcd()
     cd $1
 }
 
+copy_shell_code()
+{
+    xclip -o |grep '"\\x" |awk -F'"' '{print $2}' | tr -d '\n' |xlip -i
+}

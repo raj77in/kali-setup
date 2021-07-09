@@ -226,6 +226,7 @@ bindsym $mod+r mode "resize"
 # bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 # scrot & gimp - select window or rectangle
 bindsym $mod+Print exec flameshot gui
+bindsym Print exec flameshot gui
 
 # with prompt
 # bindsym $mod+p exec $i3qt
@@ -343,6 +344,7 @@ assign [class="qTox"] $ws9
 assign [class="Firefox"] $ws2
 assign [class="firefox"] $ws2
 assign [class="Cherrytree"] $ws3
+assign [class="Typora"] $ws3
 assign [class="Joplin"] $ws3
 assign [class="ReText"] $ws3
 assign [instance="raj77in.sh"] $ws10
@@ -547,7 +549,8 @@ exec --no-startup-id /root/.xinitrc
 
 
 
-bindsym $mod+Shift+o exec urxvtc --loginShell --color1 Orange -name raj77in.sh -e ~/amitag/CTF/hackthebox/raj77in.sh
+# bindsym $mod+Shift+o exec urxvtc --loginShell --color1 Orange -name raj77in.sh -e ~/amitag/CTF/hackthebox/raj77in.sh
+bindsym $mod+Shift+o exec urxvtc --loginShell --color1 Orange -name raj77in.sh -e ~/amitag/CTF/ProvingGrounds/raj77in.sh
 # bindsym $mod+Shift+o exec urxvtc -fg Orange -name raj77in.sh -e ~/amitag/OSWE/raj77in.sh
 #
 bindsym $mod+Shift+i exec /root/amitag/tools/rofi-fontawesome
