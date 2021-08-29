@@ -101,5 +101,21 @@ function mcd()
 
 copy_shell_code()
 {
-    xclip -o |grep '"\\x" |awk -F'"' '{print $2}' | tr -d '\n' |xlip -i
+    xclip -o |grep '"\\x' |awk -F'"' '{print $2}' | tr -d '\n' |xlip -i
+}
+
+function portnumber()
+{
+    cd /mnt/Dropbox/personal/myscripts/port-numbers
+    awk -F, -v p=$1 -v pn=$2 '$3 == p && $2 == pn' service-names-port-numbers.csv
+}
+
+function gtfobins()
+{
+    firefox "https://gtfobins.github.io/gtfobins/$1/"
+}
+
+function f()
+{
+    find . -iname \*$1\*
 }

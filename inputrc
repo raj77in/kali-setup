@@ -26,4 +26,8 @@ set show-all-if-ambiguous on
 
 #
 # end
-#
+
+
+$include /etc/inputrc
+set completion-ignore-case on
+
