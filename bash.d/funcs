@@ -106,7 +106,7 @@ copy_shell_code()
 
 function portnumber()
 {
-    cd /mnt/Dropbox/personal/myscripts/port-numbers
+    cd $DROPBOX/personal/myscripts/port-numbers
     awk -F, -v p=$1 -v pn=$2 '$3 == p && $2 == pn' service-names-port-numbers.csv
 }
 

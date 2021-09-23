@@ -11,7 +11,6 @@ export HISTSIZE=10000
 export EDITOR=vim
 export VISUAL_EDITOR=vim
 
-alias vpn-provinggrounds='cd /root/amitag/CTF/ProvingGrounds;openvpn --config vpn_config.ovpn --auth-user-pass login.conf'
 # source files
 [ -r /usr/share/bash-completion/completions ] &&
   . /usr/share/bash-completion/completions/*
@@ -189,15 +188,6 @@ export PS1="\[\033[1;32m\]\342\224\214\342\224\200\$([[ \$(/opt/vpnbash.sh) == *
 # neofetch
 # screenfetch
 #
-mkdir-linrecon()
-{
-    mkdir www
-    cd www
-    cp  /root/amitag/git/tools/Linux/privilege-escalation-awesome-scripts-suite/linPEAS/linpeas.sh .
-    cp /root/amitag/git/tools/Linux/LinEnum/LinEnum.sh .
-    cp /root/amitag/git/pspy/pspy .
-}
-
 bash $(cd $(dirname $(realpath ${BASH_SOURCE[0]}))/..;pwd)/shell-color-scripts/randomcolors.sh
 
 eval "$(starship init bash)"
