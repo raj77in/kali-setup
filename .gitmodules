@@ -32,3 +32,6 @@
 [submodule "dotfiles"]
 	path =dotfiles
 	url = https://github.com/raj77in/dotfiles
+[submodule "tmux"]
+	path = tmux
+	url = https://github.com/gpakosz/.tmux
