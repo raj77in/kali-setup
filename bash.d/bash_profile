@@ -190,7 +190,9 @@ export PS1="\[\033[1;32m\]\342\224\214\342\224\200\$([[ \$(/opt/vpnbash.sh) == *
 #
 bash $(cd $(dirname $(realpath ${BASH_SOURCE[0]}))/..;pwd)/shell-color-scripts/randomcolors.sh
 
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
+
+eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/jv_sitecorian.omp.json)"
 
 
 

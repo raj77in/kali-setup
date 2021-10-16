@@ -15,7 +15,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Thu Jan 23, 2020  10:14PM
+# Last modified: Sat Oct 16, 2021  04:40PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -40,6 +40,7 @@ function download_fonts()
     dfonts BigBlueTerminal.zip
     dfonts FiraMono.zip
     dfonts Hack.zip
+    dfonts CascadiaCode.zip
 }
 
 function create_link()
@@ -136,4 +137,19 @@ apt install -y kitty
 apt install -y python3-pip
 pip3 install --user pwntools
 
+
+## Install oh my posh
+
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+sudo chmod +x /usr/local/bin/oh-my-posh
+
+mkdir ~/.poshthemes
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+chmod u+rw ~/.poshthemes/*.json
+rm ~/.poshthemes/themes.zip
+
+## Check all the themes
+
+for file in ~/.poshthemes/*.omp.json; do echo "$file\n"; oh-my-posh --config $file --shell universal; echo "\n"; done;
 
