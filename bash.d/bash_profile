@@ -181,8 +181,8 @@ function exitstatus ()
     fi
 }
 
-export PS1=':\[$(exitstatus)\] me@\h \W ; '
-export PS1="\[\033[1;32m\]\342\224\214\342\224\200\$([[ \$(/opt/vpnbash.sh) == *\"10.\"* ]] && echo \"[\[\033[1;34m\]\$(/opt/vpnserver.sh)\[\033[1;32m\]]\342\224\200[\[\033[1;37m\]\$(/opt/vpnbash.sh)\[\033[1;32m\]]\342\224\200\")[\[\033[1;37m\]\u\[\033[01;32m\]@\[\033[01;34m\]\h\[\033[1;32m\]]\342\224\200[\[\033[1;37m\]\w\[\033[1;32m\]]\n\[\033[1;32m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;32m\][\e[01;33m\]★ \e[01;32m\]]\\$\[\e[0m\] "
+# export PS1=':\[$(exitstatus)\] me@\h \W ; '
+# export PS1="\[\033[1;32m\]\342\224\214\342\224\200\$([[ \$(/opt/vpnbash.sh) == *\"10.\"* ]] && echo \"[\[\033[1;34m\]\$(/opt/vpnserver.sh)\[\033[1;32m\]]\342\224\200[\[\033[1;37m\]\$(/opt/vpnbash.sh)\[\033[1;32m\]]\342\224\200\")[\[\033[1;37m\]\u\[\033[01;32m\]@\[\033[01;34m\]\h\[\033[1;32m\]]\342\224\200[\[\033[1;37m\]\w\[\033[1;32m\]]\n\[\033[1;32m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;32m\][\e[01;33m\]★ \e[01;32m\]]\\$\[\e[0m\] "
 
 
 # neofetch
@@ -192,7 +192,7 @@ bash $(cd $(dirname $(realpath ${BASH_SOURCE[0]}))/..;pwd)/shell-color-scripts/r
 
 # eval "$(starship init bash)"
 
-eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/jv_sitecorian.omp.json)"
+# eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/agnoster.omp.json )"
 
 
 
@@ -208,3 +208,12 @@ cat <<'EOF'
 
 EOF
 echo -e "\033[0;00m"
+
+## Setup pentools
+export PATH="$PATH:~/tools"
+export PT_BASE="~/tools"
+export PT_ODIR="~/CTF/hackthebox/scans/$HOSTNAME/"
+export PT_TUN="tun0"
+export PT_GDIR="~/amitag/git/tools/"
+export PT_TDIR="/root/amitag/tools/"
+export PT_LPORT=8001

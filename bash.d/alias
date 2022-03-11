@@ -1,5 +1,7 @@
 # ft=sh
 
+# alias cat=bat
+alias ls='exa -G --colour-scale --icons'
 alias aircrack-ng="aircrack-ng -z"
 alias airodump-ng="airodump-ng --manufacturer --wps --uptime"
 alias axel="axel -a"
