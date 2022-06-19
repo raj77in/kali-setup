@@ -1,7 +1,8 @@
 # ft=sh
 
 # alias cat=bat
-alias ls='exa -G --colour-scale --icons'
+alias lse='exa -G --colour-scale --icons'
+alias lse2='exa -@ -UumalF --icons'
 alias aircrack-ng="aircrack-ng -z"
 alias airodump-ng="airodump-ng --manufacturer --wps --uptime"
 alias axel="axel -a"
@@ -33,6 +34,7 @@ alias mantra='/usr/local/mantra/OWASP\ Mantra'
 alias mkdir="mkdir -pv"
 alias msfc="systemctl start postgresql; msfdb start; msfconsole -q \"$@\""
 alias msf_start='systemctl start postgresql; msfdb start; msfconsole'
+alias mosse='cd /mnt/Dropbox/Calibre-Kindle-Unlimited/Courses/mosse/'
 alias nc=ncat
 # alias nmap="nmap --reason --open"
 alias nopen="nmap --reason --open"

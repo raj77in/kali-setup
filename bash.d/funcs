@@ -119,3 +119,11 @@ function f()
 {
     find . -iname \*$1\*
 }
+function record()
+{
+    name="$*"
+    sed 's/EXER/'"${name}"'/' /mnt/Dropbox/Calibre-Kindle-Unlimited/Courses/mosse/MICS/intro.txt > /tmp/intro.txt
+    pango-view --dpi=110 --markup /tmp/intro.txt &
+    recordmydesktop --on-the-fly-encoding --no-sound -o ${name// /_}
+}
+

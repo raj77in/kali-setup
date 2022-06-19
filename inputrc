@@ -31,3 +31,7 @@ set show-all-if-ambiguous on
 $include /etc/inputrc
 set completion-ignore-case on
 
+
+## Useful for logging
+'\C-p":'"\C-aecho "## $(date +%s) $(date +%x\\ %X) ##'
+

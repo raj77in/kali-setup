@@ -192,8 +192,8 @@ bash $(cd $(dirname $(realpath ${BASH_SOURCE[0]}))/..;pwd)/shell-color-scripts/r
 
 # eval "$(starship init bash)"
 
-# eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/agnoster.omp.json )"
-
+eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/nu4a.omp.json)"
+theme.sh miramare
 
 
 echo -e "\033[38;5;208m"

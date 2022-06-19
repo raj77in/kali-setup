@@ -22,8 +22,8 @@ set $TERMINAL /usr/bin/kitty
 # set $TERMINAL /usr/local/bin/st
 # set $TERMINAL gnome-terminal
 for_window [class="^.*"] border pixel 2
-gaps inner 15
-gaps outer 15
+# gaps inner 15
+# gaps outer 15
 # set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $stoprec --no-startup-id dmenurecord kill
@@ -275,7 +275,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 bar {
     position top
-    height 25
+# height 25
     status_command py3status  -c /root/.config/i3/i3status.conf
     mode dock
     modifier None
@@ -491,11 +491,11 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-gaps inner 10
-gaps outer 10
+# gaps inner 10
+# gaps outer 10
 
 # smart_gaps on
-smart_borders on
+# smart_borders on
 
 
 # enable Alt+Tab Functionality

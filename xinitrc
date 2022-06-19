@@ -9,6 +9,7 @@
 #
 #
 
+/root/amitag/mount-sshfs.sh
 terminator & 
 xrandr --output Virtual-1 --auto --mode 1920x1080 & 
 dunst & 
