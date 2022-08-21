@@ -119,6 +119,26 @@ function f()
 {
     find . -iname \*$1\*
 }
+
+function disk_usage()
+{
+    while read line
+    do
+        [[ $line == *KB* ]] && echo -e '\E[37;32m'$line'\033[0m'
+        [[ $line == *MB* ]] && echo -e '\E[37;34m'$line'\033[0m'
+        [[ $line == *GB* ]] && echo -e '\E[34;31m'$line'\033[0m'
+    done < <(
+    (du -kod 2>/dev/null|| du -Sxk)| sort -nr | head -${1:-10}|awk '{
+    if ($1/1024 > 1024)
+        size=$1/1024/1024."GB";
+    else
+        size=$1/1024."MB";
+        print size"\t"$2;
+    }'
+    )
+}
+
+
 function record()
 {
     name="$*"

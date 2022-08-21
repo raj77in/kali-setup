@@ -29,7 +29,7 @@ test -s ~/.alias && . ~/.alias || true
 test -s ~/.funcs && . ~/.funcs || true
 
 
-export PATH=$PATH:/root/.local/bin
+export PATH=$PATH:/root/.local/bin:/root/go/bin
 export PYTHONPATH=$(python -c "import site, os; print(os.path.join(site.USER_BASE, 'lib', 'python', 'site-packages'))"):$PYTHONPATH
 export NVM_DIR="/root/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
