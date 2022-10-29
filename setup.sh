@@ -15,7 +15,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Sat Oct 29, 2022  06:49PM
+# Last modified: Sat Oct 29, 2022  07:17PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -190,3 +190,29 @@ Window Manager Tweaks → Compositor → disable Show shadows under dock windows
 Tip: If you want to open Plank settings, press Ctrl + Right-click over it. You can change the theme and make it completely transparent.
 
 EOF
+
+
+## Theme
+
+[[ ! -d /.themes ]] && mkdir ~/.themes
+cd ~/.themes
+wget --header 'Host: ocs-dl.fra1.cdn.digitaloceanspaces.com' --user-agent 'Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --referer 'https://www.xfce-look.org/' --header 'Upgrade-Insecure-Requests: 1' --header 'Sec-Fetch-Dest: document' --header 'Sec-Fetch-Mode: navigate' --header 'Sec-Fetch-Site: cross-site' --header 'Sec-Fetch-User: ?1' 'https://ocs-dl.fra1.cdn.digitaloceanspaces.com/data/files/1515879642/XFCE-D-PRO-1.6.tar.xz?response-content-disposition=attachment%3B%2520XFCE-D-PRO-1.6.tar.xz&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=RWJAQUNCHT7V2NCLZ2AL%2F20221029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221029T132254Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=4d767b84ab48d16f476f8bb8af31924e9cd2fc86e712d2f2fd896c44d170903c' --output-document 'XFCE-D-PRO-1.6.tar.xz'
+tar xvf XFCE-D-PRO-1.6.tar.xz
+rm -rf XFCE-D-PRO-1.6.tar.xz
+
+## Moka icons
+
+xfconf-query -c xsettings -p /Net/ThemeName -s "Greybird"
+
+## Some nerd fonts
+
+[[ ! -d ~/.fonts ]] && mkdir ~/.fonts
+cd ~/.fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/CascadiaCode.zip
+unzip CascadiaCode.zip && rm CascadiaCode.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Go-Mono.zip
+unzip Go-Mono.zip && rm Go-Mono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip
+unzip Hack.zip && rm Hack.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/InconsolataGo.zip
+unzip InconsolataGo.zip && rm InconsolataGo.zip
