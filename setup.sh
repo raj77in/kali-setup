@@ -15,7 +15,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Sat Oct 16, 2021  04:40PM
+# Last modified: Sat Oct 29, 2022  06:49PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -153,3 +153,40 @@ rm ~/.poshthemes/themes.zip
 
 for file in ~/.poshthemes/*.omp.json; do echo "$file\n"; oh-my-posh --config $file --shell universal; echo "\n"; done;
 
+
+## From kali site: https://www.offensive-security.com/kali-linux/kali-linux-customization/
+xfconf-query -c xsettings -p /Net/IconThemeName -s Flat-Remix-Blue-Dark
+xfconf-query -c xsettings -p /Net/ThemeName -s Kali-Dark
+xfconf-query -c xfwm4 -p /general/theme -s Kali-Dark
+gsettings set org.xfce.mousepad.preferences.view color-scheme Kali-Dark
+
+## Kali Light theme
+## xfconf-query -c xsettings -p /Net/IconThemeName -s Flat-Remix-Blue-Light
+## xfconf-query -c xsettings -p /Net/ThemeName -s Kali-Light
+## xfconf-query -c xfwm4 -p /general/theme -s Kali-Light
+## gsettings set org.xfce.mousepad.preferences.view color-scheme Kali-Light
+
+# Remove panel shadow
+xfconf-query -c xfwm4 -p /general/show_dock_shadow -s false
+
+# Plank taskbar
+
+sudo apt install plank
+
+
+# Differen compositor
+sudo apt -y install compton
+xfconf-query -c xfwm4 -p /general/use_compositing -s false
+
+cat <<EOF
+
+open the Window Manager Tweaks application, and, inside the Compositor section, disable the Show shadows under dock windows check-box
+
+open the Session and Startup application and add Plank to the autostart list
+disable dock shadows
+
+Window Manager Tweaks → Compositor → disable Show shadows under dock windows
+
+Tip: If you want to open Plank settings, press Ctrl + Right-click over it. You can change the theme and make it completely transparent.
+
+EOF
