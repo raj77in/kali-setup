@@ -192,9 +192,10 @@ bash $(cd $(dirname $(realpath ${BASH_SOURCE[0]}))/..;pwd)/shell-color-scripts/r
 
 # eval "$(starship init bash)"
 
-eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/plague.omp.json)"
+# eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/plague.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshthemes/gmay.omp.json)"
 # theme.sh miramare
-theme.sh cai
+theme.sh one-dark
 
 
 echo -e "\033[38;5;208m"
@@ -218,3 +219,5 @@ export PT_TUN="tun0"
 export PT_GDIR="~/amitag/git/tools/"
 export PT_TDIR="/root/amitag/tools/"
 export PT_LPORT=8001
+
+alias spacevim='docker run -it -v $PWD:/docs -v ~/.SpaceVim.d:/home/spacevim/.SpaceVim.d --rm spacevim/spacevim nvim /docs'
