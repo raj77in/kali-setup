@@ -1,3 +1,0 @@
-*color1:	1.0
-*color2:	ColorCursor=${CURSOR_COLOR}
-*color3:	ColorPalette=${COLOR_01};${COLOR_02};${COLOR_03};${COLOR_04};${COLOR_05};${COLOR_06};${COLOR_07};${COLOR_08};${COLOR_09};${COLOR_10};${COLOR_11};${COLOR_12};${COLOR_13};${COLOR_14};${COLOR_15};${COLOR_16}

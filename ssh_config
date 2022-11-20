@@ -1,5 +1,0 @@
-Host vm*
-        User root
-        UserKnownHostsFile /dev/null
-        StrictHostKeyChecking no
-
