@@ -216,3 +216,6 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip
 unzip Hack.zip && rm Hack.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/InconsolataGo.zip
 unzip InconsolataGo.zip && rm InconsolataGo.zip
+
+cd ~/git-nahamsec
+curl https://raw.githubusercontent.com/nahamsec/bbht/master/install.sh |bash
