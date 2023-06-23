@@ -29,7 +29,7 @@ function dfonts()
     # Ensure we do not download the file again or if left in between then
     # continue from there.
     wget -nc -c "$U/$1"
-    unzip $1
+    unzip -f $1
     # Leave the zip files, can be useful
     # rm -rf $1
 }
@@ -58,7 +58,12 @@ function create_link()
             rm $dest
         fi
     fi
-    ln -s $script_path/$1 $dest
+    if [[ -f $script_path/$1 ]]
+    then
+      ln -s $script_path/$1 $dest
+    else
+      echo "Cannot find source file : $script_path/$1"
+    fi
 }
 
 #git clone --recurse-submodules -j8 https://github.com/raj77in/kali-setup
@@ -106,35 +111,11 @@ fc-cache
 
 
 # update apt cache
-apt update -y
+sudo apt update -y
 ## Install all packages
 
-apt install -y $(grep -v '^#' pkgs|tr '\n' ' ')
+sudo apt install -y $(grep -v '^#' pkgs|tr '\n' ' ')
 
-
-
-## Install some useful stuff :)
-
-apt update -y
-# apt autoremove -y
-apt autoclean -y
-apt install -y tmux-themepack-jimeh fonts-powerline fonts-font-awesome neofetch ack
-
-## meld diff tool, dont you just love this
-apt install -y meld
-
-## Screenshot is never same with this
-apt install -y flameshot
-
-## Some tools for documentation
-apt install -y xclip pandoc wkhtmltopdf
-
-## And terminal
-apt install -y kitty
-
-## And now for pip3 and pwntools
-#
-apt install -y python3-pip
 pip3 install --user pwntools
 
 
@@ -148,11 +129,6 @@ wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/theme
 unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
 chmod u+rw ~/.poshthemes/*.json
 rm ~/.poshthemes/themes.zip
-
-## Check all the themes
-
-for file in ~/.poshthemes/*.omp.json; do echo "$file\n"; oh-my-posh --config $file --shell universal; echo "\n"; done;
-
 
 ## From kali site: https://www.offensive-security.com/kali-linux/kali-linux-customization/
 xfconf-query -c xsettings -p /Net/IconThemeName -s Flat-Remix-Blue-Dark
@@ -204,23 +180,11 @@ rm -rf XFCE-D-PRO-1.6.tar.xz
 
 xfconf-query -c xsettings -p /Net/ThemeName -s "Greybird"
 
-## Some nerd fonts
-
-[[ ! -d ~/.fonts ]] && mkdir ~/.fonts
-cd ~/.fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/CascadiaCode.zip
-unzip CascadiaCode.zip && rm CascadiaCode.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Go-Mono.zip
-unzip Go-Mono.zip && rm Go-Mono.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip
-unzip Hack.zip && rm Hack.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/InconsolataGo.zip
-unzip InconsolataGo.zip && rm InconsolataGo.zip
-
 
 echo "Installing aquatone"
 go get github.com/michenriksen/aquatone
 
+cd ~/tools
 echo "Installing jsparser"
 git clone https://github.com/nahamsec/JSParser.git
 cd JSParser*
@@ -246,7 +210,7 @@ echo "done"
 echo "installing wpscan"
 git clone https://github.com/wpscanteam/wpscan.git
 cd wpscan*
-sudo gem install bundler && bundle install --without test
+sudo gem install bundler && sudo bundle install --without test
 cd ~/tools/
 echo "done"
 
