@@ -1,55 +1,20 @@
 nmap
-arandr
-libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev
 apt-utils
-i3-gaps-wm
-i3-gap
-i3-gaps
-i3-gaps-wm
-python-software-properties
-software-properties-common
-all git build-essential autoconf pkg-config
-xcb xcb-xkb xcb-xinerama xcb-randr xcb-shape
-libxcb-shape0-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev
-build-dep i3-wm
+git build-essential autoconf pkg-config
+build-dep
 asciidoc xmlto docbook-xml
-i3-gaps
-i3
 firefox
-rofi
-py3status
-i3-wm
-urxvt 
-rxvt-unicode-256color
-xrandr
-arandr
-randr
 terminator
-xterm
-asciidoc xmlto docbook-xml
-variety
-unclutter dunst compton 
-lxappearance
-zathura
-pandoc
-wkhtml2pdf
-wkhtmltopdf
-xclip
 
 ## Terminal
 kitty
 
 
 ## Fonts
-ttf-bitstream-vera
 texlive-fonts-extra
 fonts-inconsolata
-fonts-cascadia-code
 node-emojis-list
 fonts-noto-color-emoji
-ttf-symbola
-ttf-joypixels
-ttf-twemoji-color
 
 ## tmux
 tmux
@@ -120,4 +85,4 @@ python3-pip
 jq
 pipx
 ntpdate
-exiftool
+libimage-exiftool-perl

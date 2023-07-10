@@ -15,12 +15,12 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Mon Jul 10, 2023  01:41PM
+# Last modified: Mon Jul 10, 2023  01:55PM
 #      REVISION:  ---
 #===============================================================================
 
-set -o nounset                              # Treat unset variables as an error
 script_path=$(cd $(dirname $0); pwd)
+param=${1:-none}
 
 function dfonts()
 {
@@ -64,15 +64,16 @@ function create_link()
 function gitdw()
 {
     cd ~/tools
-    if [[ -d $1 ]]
+    gitd=$(basename $1)
+    if [[ -d $gitd ]]
     then
-        { cd $1;
+        { cd $gitd;
             git pull
         }
     else
         git clone https://github.com/$1
     fi
-
+}
 
 
 if [[ $1 == "config" ]] 
@@ -181,34 +182,13 @@ sudo apt update -y
 
 sudo apt install -y $(grep -v '^#' pkgs|tr '\n' ' ')
 
-
-
 ## Install some useful stuff :)
 
 # apt autoremove -y
 sudo apt autoclean -y
 
 # Some python tools
-pip3 install --user pwntools
-
-# Differen compositor
-# sudo apt -y install compton
-# xfconf-query -c xfwm4 -p /general/use_compositing -s false
-
-cat <<EOF
-
-open the Window Manager Tweaks application, and, inside the Compositor section, disable the Show shadows under dock windows check-box
-
-open the Session and Startup application and add Plank to the autostart list
-disable dock shadows
-
-Window Manager Tweaks → Compositor → disable Show shadows under dock windows
-
-Tip: If you want to open Plank settings, press Ctrl + Right-click over it. You can change the theme and make it completely transparent.
-
-EOF
-
-
+pipx install --user pwntools
 
 echo "Installing aquatone"
 go get github.com/michenriksen/aquatone
@@ -217,17 +197,11 @@ echo "Installing jsparser"
 gitdw nahamsec/JSParser.git
 cd JSParser*
 sudo python setup.py install
-cd ~/tools/
-echo "done"
-
 
 echo "installing Sublist3r"
 gitdw aboul3la/Sublist3r.git
 cd Sublist3r*
-pip install -r requirements.txt
-cd ~/tools/
-echo "done"
-
+pipx install -r requirements.txt
 
 echo "installing teh_s3_bucketeers"
 gitdw tomdev/teh_s3_bucketeers.git
@@ -267,24 +241,21 @@ make
 
 echo "installing asnlookup"
 gitdw yassineaboukir/asnlookup.git
+
 cd asnlookup
-pip install -r requirements.txt
+pipx install -r requirements.txt
 
 echo "installing httprobe"
 go get -u github.com/tomnomnom/httprobe
-echo "done"
 
 echo "installing unfurl"
 go get -u github.com/tomnomnom/unfurl
-echo "done"
 
 echo "installing waybackurls"
 go get github.com/tomnomnom/waybackurls
-echo "done"
 
 echo "installing crtndstry"
 gitdw nahamsec/crtndstry.git
-echo "done"
 
 echo "downloading Seclists"
 cd ~/tools/
@@ -292,16 +263,12 @@ gitdw danielmiessler/SecLists.git
 cd ~/tools/SecLists/Discovery/DNS/
 ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
 cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
-cd ~/tools/
-echo "done"
 
 echo "Remove some tools from apt, its old"
-apt remove --purge seclists python-impacket
+sudo apt remove --purge seclists python-impacket
 
 ln -s ~/tools/Seclists /usr/share/seclists
 
-
-cd ~/tools
 echo "Cloning PayloadAllTheThings"
 gitdw swisskyrepo/PayloadsAllTheThings
 
