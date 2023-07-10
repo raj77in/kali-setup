@@ -1,9 +1,7 @@
 nmap
 apt-utils
 git build-essential autoconf pkg-config
-build-dep
 asciidoc xmlto docbook-xml
-firefox
 terminator
 
 ## Terminal
@@ -35,7 +33,6 @@ ncat
 hurl
 
 ## Other important packages.
-seclists
 uniscan
 # exploitdb-papers
 #
