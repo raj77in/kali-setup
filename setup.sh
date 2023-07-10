@@ -15,7 +15,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Mon Jul 10, 2023  01:55PM
+# Last modified: Mon Jul 10, 2023  02:11PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -297,6 +297,19 @@ gitdw mpgn/CrackMapExec.git
 
 echo certipy
 gitdw ly4k/Certipy.git
+
+echo "Downloading icons-in-terminal"
+gitdw sebastiencs/icons-in-terminal 
+
+echo "Downloading binaries"
+
+python githubdownload.py jpillora/chisel _linux_amd64.gz ~/tools/bin
+python githubdownload.py jpillora/chisel _windows_amd64.gz ~/tools/bin
+python githubdownload.py carlospolop/PEASS-ng linpeas.sh ~/tools/bin
+python githubdownload.py carlospolop/PEASS-ng winPEASx64.exe ~/tools/bin
+python githubdownload.py WithSecureLabs/chainsaw chainsaw_all_ ~/tools/bin
+python githubdownload.py BloodHoundAD/BloodHound BloodHound-linux-x64.zip ~/tools/bin
+
 
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 ls -la
