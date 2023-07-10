@@ -15,7 +15,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Mon Jul 10, 2023  12:38PM
+# Last modified: Mon Jul 10, 2023  01:41PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -60,6 +60,19 @@ function create_link()
     fi
     ln -s $script_path/$1 $dest
 }
+
+function gitdw()
+{
+    cd ~/tools
+    if [[ -d $1 ]]
+    then
+        { cd $1;
+            git pull
+        }
+    else
+        git clone https://github.com/$1
+    fi
+
 
 
 if [[ $1 == "config" ]] 
@@ -179,8 +192,8 @@ sudo apt autoclean -y
 pip3 install --user pwntools
 
 # Differen compositor
-sudo apt -y install compton
-xfconf-query -c xfwm4 -p /general/use_compositing -s false
+# sudo apt -y install compton
+# xfconf-query -c xfwm4 -p /general/use_compositing -s false
 
 cat <<EOF
 
@@ -201,7 +214,7 @@ echo "Installing aquatone"
 go get github.com/michenriksen/aquatone
 
 echo "Installing jsparser"
-git clone https://github.com/nahamsec/JSParser.git
+gitdw nahamsec/JSParser.git
 cd JSParser*
 sudo python setup.py install
 cd ~/tools/
@@ -209,7 +222,7 @@ echo "done"
 
 
 echo "installing Sublist3r"
-git clone https://github.com/aboul3la/Sublist3r.git
+gitdw aboul3la/Sublist3r.git
 cd Sublist3r*
 pip install -r requirements.txt
 cd ~/tools/
@@ -217,67 +230,45 @@ echo "done"
 
 
 echo "installing teh_s3_bucketeers"
-git clone https://github.com/tomdev/teh_s3_bucketeers.git
+gitdw tomdev/teh_s3_bucketeers.git
 cd ~/tools/
 echo "done"
 
 
 echo "installing wpscan"
-git clone https://github.com/wpscanteam/wpscan.git
+gitdw wpscanteam/wpscan.git
 cd wpscan*
 sudo gem install bundler && bundle install --without test
-cd ~/tools/
-echo "done"
 
 echo "installing dirsearch"
-git clone https://github.com/maurosoria/dirsearch.git
-cd ~/tools/
-echo "done"
+gitdw maurosoria/dirsearch.git
 
 
 echo "installing lazys3"
-git clone https://github.com/nahamsec/lazys3.git
-cd ~/tools/
-echo "done"
+gitdw nahamsec/lazys3.git
 
 echo "installing virtual host discovery"
-git clone https://github.com/jobertabma/virtual-host-discovery.git
-cd ~/tools/
-echo "done"
+gitdw jobertabma/virtual-host-discovery.git
 
 
 echo "installing sqlmap"
-git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
-cd ~/tools/
-echo "done"
+gitdw sqlmapproject/sqlmap.git
 
 echo "installing knock.py"
 git clone https://github.com/guelfoweb/knock.git
-cd ~/tools/
-echo "done"
 
 echo "installing lazyrecon"
-git clone https://github.com/nahamsec/lazyrecon.git
-cd ~/tools/
-echo "done"
-
-echo "installing nmap"
-sudo apt-get install -y nmap
-echo "done"
+gitdw nahamsec/lazyrecon.git
 
 echo "installing massdns"
-git clone https://github.com/blechschmidt/massdns.git
-cd ~/tools/massdns
+gitdw blechschmidt/massdns.git
+cd massdns
 make
-cd ~/tools/
-echo "done"
 
 echo "installing asnlookup"
-git clone https://github.com/yassineaboukir/asnlookup.git
-cd ~/tools/asnlookup
+gitdw yassineaboukir/asnlookup.git
+cd asnlookup
 pip install -r requirements.txt
-cd ~/tools/
-echo "done"
 
 echo "installing httprobe"
 go get -u github.com/tomnomnom/httprobe
@@ -292,12 +283,12 @@ go get github.com/tomnomnom/waybackurls
 echo "done"
 
 echo "installing crtndstry"
-git clone https://github.com/nahamsec/crtndstry.git
+gitdw nahamsec/crtndstry.git
 echo "done"
 
 echo "downloading Seclists"
 cd ~/tools/
-git clone https://github.com/danielmiessler/SecLists.git
+gitdw danielmiessler/SecLists.git
 cd ~/tools/SecLists/Discovery/DNS/
 ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
 cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
@@ -310,11 +301,37 @@ apt remove --purge seclists python-impacket
 ln -s ~/tools/Seclists /usr/share/seclists
 
 
+cd ~/tools
+echo "Cloning PayloadAllTheThings"
+gitdw swisskyrepo/PayloadsAllTheThings
+
+
+echo "Sharp collections"
+gitdw Flangvik/SharpCollection
+
+echo "Chisel for tunneling"
+gitdw jpillora/chisel
+
+echo "PEASS-ng"
+gitdw carlospolop/PEASS-ng
+
+echo "Chainsaw"
+gitdw WithSecureLabs/chainsaw
+
+echo "Bloodhound"
+gitdw BloodHoundAD/BloodHound
+
+
+echo "impacket latest"
+gitdw fortra/impacket.git
+
+echo "CrackMapExec"
+gitdw mpgn/CrackMapExec.git
+
+echo certipy
+gitdw ly4k/Certipy.git
+
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in ~/tools"
 ls -la
 echo "One last time: don't forget to set up AWS credentials in ~/.aws/!"
-
-cd ~/tools
-echo "Cloning PayloadAllTheThings"
-git clone https://github.com/swisskyrepo/PayloadsAllTheThings
 
