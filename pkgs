@@ -83,3 +83,6 @@ jq
 pipx
 ntpdate
 libimage-exiftool-perl
+
+## SSH AUditiing
+ssh-audit
