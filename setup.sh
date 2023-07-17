@@ -15,7 +15,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Mon Jul 17, 2023  12:44PM
+# Last modified: Mon Jul 17, 2023  04:06PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -260,7 +260,8 @@ for i in nahamsec/JSParser.git \
 	mpgn/CrackMapExec.git \
 	ly4k/Certipy.git \
 	sebastiencs/icons-in-terminal \
-	IppSec/ctf-scripts
+	IppSec/ctf-scripts \
+	urbanadventurer/username-anarchy
 do
   gitdw "$i"
 done
