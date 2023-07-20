@@ -3,7 +3,7 @@
 
 ip=$1
 
-
+exec &> check-ports-$ip.log
 #TCP Ports
 ports=$(cat nmap/full-$ip.gnmap |grep Ports  |sed -e 's/.*Ports://' -e 's/Ignored State:.*//' -e 's/ //g' -e 's#/.[^,]*##g' | tr ',' '\n')
 for i in ${ports[*]}
