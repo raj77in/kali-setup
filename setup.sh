@@ -15,7 +15,7 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Thu Jul 20, 2023  11:49AM
+# Last modified: Thu Jul 20, 2023  01:32PM
 #      REVISION:  ---
 #===============================================================================
 
@@ -280,9 +280,9 @@ python ${script_path}/githubdownload.py jpillora/chisel _linux_amd64.gz $TOOLS/b
 python ${script_path}/githubdownload.py jpillora/chisel _windows_amd64.gz $TOOLS/bin
 python ${script_path}/githubdownload.py carlospolop/PEASS-ng linpeas.sh $TOOLS/bin
 python ${script_path}/githubdownload.py carlospolop/PEASS-ng winPEASx64.exe $TOOLS/bin
-python ${script_path}/githubdownload.py WithSecureLabs/chainsaw chainsaw_all_ $TOOLS/bin
-python ${script_path}/githubdownload.py BloodHoundAD/BloodHound BloodHound-linux-x64.zip $TOOLS/bin
-python ${script_path}/githubdownload.py NationalSecurityAgency/ghidra  ghidra_*.zip  $TOOLS/bin/
+python ${script_path}/githubdownload.py WithSecureLabs/chainsaw chainsaw_all_ $TOOLS/
+python ${script_path}/githubdownload.py BloodHoundAD/BloodHound BloodHound-linux-x64.zip $TOOLS/
+python ${script_path}/githubdownload.py NationalSecurityAgency/ghidra  ghidra_*.zip  $TOOLS/
 
 
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in $TOOLS"
