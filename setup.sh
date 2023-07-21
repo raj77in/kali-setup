@@ -15,13 +15,47 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Thu Jul 20, 2023  01:32PM
+# Last modified: Fri Jul 21, 2023  11:32AM
 #      REVISION:  ---
 #===============================================================================
 
 script_path=$(cd $(dirname $0); pwd)
 param=${1:-none}
 TOOLS="$HOME/tools"
+
+EXTENSIONS_SYSTEM='/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/'
+EXTENSIONS_USER=`echo ~/.mozilla/firefox/*.default/extensions/`
+
+# -------------------------- xpi tools ---------------------------------
+
+get_addon_id_from_xpi () { #path to .xpi file
+    addon_id_line=`unzip -p $1 install.rdf | egrep '<em:id>' -m 1`
+    addon_id=`echo $addon_id_line | sed "s/.*>\(.*\)<.*/\1/"`
+    echo "$addon_id"
+}
+
+get_addon_name_from_xpi () { #path to .xpi file
+    addon_name_line=`unzip -p $1 install.rdf | egrep '<em:name>' -m 1`
+    addon_name=`echo $addon_name_line | sed "s/.*>\(.*\)<.*/\1/"`
+    echo "$addon_name"
+}
+
+# Installs .xpi given by relative path
+# to the extensions path given
+install_addon () {
+    xpi="${PWD}/${1}"
+    extensions_path=$2
+    new_filename=`get_addon_id_from_xpi $xpi`.xpi
+    new_filepath="${extensions_path}${new_filename}"
+    addon_name=`get_addon_name_from_xpi $xpi`
+    if [ -f "$new_filepath" ]; then
+        echo "File already exists: $new_filepath"
+        echo "Skipping installation for addon $addon_name."
+    else
+        cp "$xpi" "$new_filepath"
+    fi
+}
+
 
 function dfonts()
 {
@@ -283,6 +317,34 @@ python ${script_path}/githubdownload.py carlospolop/PEASS-ng winPEASx64.exe $TOO
 python ${script_path}/githubdownload.py WithSecureLabs/chainsaw chainsaw_all_ $TOOLS/
 python ${script_path}/githubdownload.py BloodHoundAD/BloodHound BloodHound-linux-x64.zip $TOOLS/
 python ${script_path}/githubdownload.py NationalSecurityAgency/ghidra  ghidra_*.zip  $TOOLS/
+
+
+## Install firefox extensions
+
+wget -c https://addons.mozilla.org/firefox/downloads/file/3707199/cliget-2.1.0.xpi
+install_addon  cliget-2.1.0.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/3755764/cookie_editor-1.10.1.xpi
+install_addon  cookie_editor-1.10.1.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/4021899/darkreader-4.9.60.xpi
+install_addon  darkreader-4.9.60.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/3748931/hack_resources-1.2.1.xpi
+install_addon  hack_resources-1.2.1.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/3901885/hacktools-0.4.0.xpi
+install_addon  hacktools-0.4.0.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/3961037/hackbar_free-2.5.3.xpi
+install_addon  hackbar_free-2.5.3.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/4006774/penetration_testing_kit-8.2.2.xpi
+install_addon  penetration_testing_kit-8.2.2.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/599873/showhide_passwords-0.4.xpi
+install_addon  showhide_passwords-0.4.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/3723251/temporary_containers-1.9.2.xpi
+install_addon  temporary_containers-1.9.2.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/3952467/user_agent_string_switcher-0.4.8.xpi
+install_addon  user_agent_string_switcher-0.4.8.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/4032117/wappalyzer-6.10.50.xpi
+install_addon  wappalyzer-6.10.50.xpi "$EXTENSIONS_USER"
+wget -c https://addons.mozilla.org/firefox/downloads/file/4027621/retire_js-1.7.2.xpi
+install_addon  retire_js-1.7.2.xpi "$EXTENSIONS_USER"
 
 
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in $TOOLS"
