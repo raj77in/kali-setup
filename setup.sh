@@ -15,13 +15,15 @@
 #        AUTHOR: Amit Agarwal (aka),
 #  ORGANIZATION: Individual
 #       CREATED: 11/29/2019 09:37
-# Last modified: Fri Jul 21, 2023  11:32AM
+# Last modified: Tue Jul 25, 2023  11:29AM
 #      REVISION:  ---
 #===============================================================================
 
 script_path=$(cd $(dirname $0); pwd)
 param=${1:-none}
 TOOLS="$HOME/tools"
+
+[[ ! -d "$TOOLS" ]] && mkdir "$TOOLS"
 
 EXTENSIONS_SYSTEM='/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/'
 EXTENSIONS_USER=`echo ~/.mozilla/firefox/*.default/extensions/`
