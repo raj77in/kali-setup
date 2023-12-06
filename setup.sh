@@ -350,6 +350,11 @@ wget -c https://addons.mozilla.org/firefox/downloads/file/4027621/retire_js-1.7.
 install_addon  retire_js-1.7.2.xpi "$EXTENSIONS_USER"
 
 
+## Setup  neovim
+cd ~/.config
+git clone https://github.com/raj77in/kickstart.nvim nvim
+
+
 echo -e "\n\n\n\n\n\n\n\n\n\n\nDone! All tools are set up in $TOOLS"
 ls -la
 echo "One last time: don't forget to set up AWS credentials in ~/.aws/!"
