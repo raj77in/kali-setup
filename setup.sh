@@ -275,78 +275,51 @@ echo "Remove some tools from apt, its old"
 
 for i in nahamsec/JSParser.git \
 	aboul3la/Sublist3r.git \
-	tomdev/teh_s3_bucketeers.git \
-	wpscanteam/wpscan.git \
-	maurosoria/dirsearch.git \
-	nahamsec/lazys3.git \
-	jobertabma/virtual-host-discovery.git \
-	sqlmapproject/sqlmap.git \
-	nahamsec/lazyrecon.git \
-	blechschmidt/massdns.git \
-	yassineaboukir/asnlookup.git \
-	nahamsec/crtndstry.git \
-	danielmiessler/SecLists.git \
-	swisskyrepo/PayloadsAllTheThings \
-	Flangvik/SharpCollection \
-	jpillora/chisel \
-	carlospolop/PEASS-ng \
-	WithSecureLabs/chainsaw \
-	BloodHoundAD/BloodHound \
-	fortra/impacket.git \
-	mpgn/CrackMapExec.git \
-	ly4k/Certipy.git \
-	sebastiencs/icons-in-terminal \
-	IppSec/ctf-scripts \
-	urbanadventurer/username-anarchy \
-	ticarpi/jwt_tool \
-	robotshell/magicRecon \
-	IppSec/parrot-build \
-	rajeshmajumdar/BruteXSS \
-	raj77in/dotfiles \
-	carlospolop/legion \
-	OWASP/CheatSheetSeries \
-	merttasci/csrf-poc-generator \
-	ticarpi/jwt_tool \
-	htr-tech/zphisher.git \
-	s0md3v/XSStrike \
-	nahamsec/recon_profile.git \
-	jobertabma/virtual-host-discovery.git \
-	nahamsec/lazyrecon.git \
-	mkamarin/ct2md \
-	mpgn/CrackMapExec.git \
-	huntergregal/mimipenguin \
-	jpillora/chisel \
-	RUB-NDS/REST-Attacker \
-	imperva/automatic-api-attack-tool \
-	nahamsec/lazys3.git \
-	mpepping/docker-cyberchef \
-	swisskyrepo/PayloadsAllTheThings \
-	aquasecurity/linux-bench \
-	WithSecureLabs/chainsaw \
-	sqlmapproject/sqlmap.git \
-	flipkart-incubator/Astra.git \
-	wpscanteam/wpscan.git \
 	akto-api-security/akto \
-	sqlmapproject/sqlmap.git \
-	carlospolop/PEASS-ng \
-	sebastiencs/icons-in-terminal \
-	IppSec/ctf-scripts \
-	ly4k/Certipy.git \
-	nahamsec/JSParser.git \
-	ticarpi/jwt_tool \
-	aboul3la/Sublist3r.git \
+	aquasecurity/linux-bench \
 	blechschmidt/massdns.git \
-	nahamsec/crtndstry.git \
-	maurosoria/dirsearch.git \
+	BloodHoundAD/BloodHound \
+	carlospolop/legion \
+	carlospolop/PEASS-ng \
+	danielmiessler/SecLists.git \
+	Flangvik/SharpCollection \
+	flipkart-incubator/Astra.git \
+	fortra/impacket.git \
 	gsmith257-cyber/GraphCrawler \
-	yassineaboukir/asnlookup.git \
+	guelfoweb/knock.git \
+	htr-tech/zphisher.git \
+	huntergregal/mimipenguin \
+	imperva/automatic-api-attack-tool \
+	IppSec/ctf-scripts \
+	IppSec/parrot-build \
+	jobertabma/virtual-host-discovery.git \
+	jpillora/chisel \
+	ly4k/Certipy.git \
+	matusf/openapi-fuzzer \
+	maurosoria/dirsearch.git \
+	merttasci/csrf-poc-generator \
+	mkamarin/ct2md \
+	mpepping/docker-cyberchef \
+	mpgn/CrackMapExec.git \
+	nahamsec/crtndstry.git \
+	nahamsec/lazyrecon.git \
+	nahamsec/lazys3.git \
+	nahamsec/recon_profile.git \
+	OWASP/CheatSheetSeries \
+	raj77in/dotfiles \
+	rajeshmajumdar/BruteXSS \
+	robotshell/magicRecon \
+	RUB-NDS/REST-Attacker \
+	s0md3v/XSStrike \
+	sebastiencs/icons-in-terminal \
+	sqlmapproject/sqlmap.git \
+	swisskyrepo/PayloadsAllTheThings \
+	ticarpi/jwt_tool \
 	tomdev/teh_s3_bucketeers.git \
 	urbanadventurer/username-anarchy \
-	BloodHoundAD/BloodHound \
-	Flangvik/SharpCollection \
-	guelfoweb/knock.git \
-	fortra/impacket.git \
-	matusf/openapi-fuzzer
+	WithSecureLabs/chainsaw \
+	wpscanteam/wpscan.git \
+	yassineaboukir/asnlookup.git
 do
   gitdw "$i"
 done
