@@ -19,9 +19,10 @@ tmux
 tmux-themepack-jimeh
 
 ## Some better alternatives
-glances 
+glances
 most
 htop
+screenfetch
 
 ## misc packages
 exuberant-ctags
@@ -63,7 +64,6 @@ ibombshell
 tmux-themepack-jimeh
 fonts-powerline
 fonts-font-awesome
-neofetch
 
 # grep replacements
 ripgrep
@@ -73,7 +73,6 @@ ack
 meld
 flameshot
 pandoc
-wkhtmltopdf
 xclip
 kitty
 python3-pip
@@ -81,7 +80,6 @@ python3-pip
 ## And some more important ones
 jq
 pipx
-ntpdate
 libimage-exiftool-perl
 
 ## SSH AUditiing
