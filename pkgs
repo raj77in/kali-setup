@@ -88,3 +88,27 @@ neovim
 
 ## CyberChef
 cyberchef
+
+## sshfs for mounting ssh filesystems
+sshfs
+
+## OTher terminals and useful utilities
+alacritty
+blackbox-terminal
+catimg
+
+colorize
+colorized-logs
+hyfetch
+fastfetch
+du-dust
+fonts-inconsolata
+fonts-firacode
+foot
+foot-themes
+glow
+lsix
+md2term
+meow
+ptyxis
+zutty
