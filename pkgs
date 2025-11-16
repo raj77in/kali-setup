@@ -112,3 +112,8 @@ md2term
 meow
 ptyxis
 zutty
+
+## Other useful utilities
+eza
+gdu
+fzf

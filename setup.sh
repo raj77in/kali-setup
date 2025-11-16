@@ -1,13 +1,13 @@
-#!/bin/bash - 
+#!/bin/bash -
 #===============================================================================
 #
 #          FILE: setup.sh
-# 
-#         USAGE: ./setup.sh 
-# 
+#
+#         USAGE: ./setup.sh
+#
 #   DESCRIPTION: Script to setup kali machine.
 #                My blog: https://blog.amit-agarwal.co.in, https://blog.aka.rocks
-# 
+#
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
 #          BUGS: ---
@@ -83,11 +83,11 @@ function download_fonts()
 function create_link()
 {
     dest=$HOME/$2
-    if [[ -d $dest || -f $dest || -L $dest ]] 
+    if [[ -d $dest || -f $dest || -L $dest ]]
     then
         [[ ! -d ~/kali-setup-backup-files ]] && mkdir ~/kali-setup-backup-files
         # Backup the files only first time.
-        if [[ ! -r $dest ]] 
+        if [[ ! -r $dest ]]
         then
             [[ ! -d $(dirname $dest) ]] && mkdir $(dirname $dest)
             mv $dest ~/kali-setup-backup-files
@@ -106,7 +106,10 @@ function config_JSParser() {
 function config_Sublist3r()
 {
   cd $TOOLS/Sublist3r || return
-  pip install -r requirements.txt --user
+  uv venv ~/venv/Sublist3r
+  source ~/venv/Sublist3r/bin/activate
+  uv pip install -r requirements.txt --user
+  deactivate
 }
 
 function config_wpscan()
@@ -124,14 +127,10 @@ function config_massdns()
 function config_asnlookup()
 {
   cd $TOOLS/asnlookup || return
-  pip install -r requirements.txt --user
-}
-
-function config_SecLists()
-{
-  cd "$TOOLS/SecLists/Discovery/DNS/" || return
-  ##THIS FILE BREAKS MASSDNS AND NEEDS TO BE CLEANED
-  sudo ln -s $TOOLS/Seclists /usr/share/seclists
+  uv venv ~/venv/asnlookup
+  source ~/venv/asnlookup/bin/activate
+  uv pip install -r requirements.txt --user
+  deactivate
 }
 
 function gitdw()
@@ -157,7 +156,7 @@ function gitdw()
 }
 
 
-if [[ $1 == "config" ]] 
+if [[ $1 == "config" ]]
 then
     #git clone --recurse-submodules -j8 https://github.com/raj77in/kali-setup
     echo "Check if bashrc sources ~/.bash_aliases, if not source the same"
@@ -257,6 +256,10 @@ then
     unzip InconsolataGo.zip && rm InconsolataGo.zip
 fi
 
+## Install uv using sudo
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # update apt cache
 sudo apt update -y
 ## Install all packages
@@ -281,7 +284,6 @@ for i in nahamsec/JSParser.git \
 	BloodHoundAD/BloodHound \
 	carlospolop/legion \
 	carlospolop/PEASS-ng \
-	danielmiessler/SecLists.git \
 	Flangvik/SharpCollection \
 	flipkart-incubator/Astra.git \
 	fortra/impacket.git \
@@ -300,13 +302,13 @@ for i in nahamsec/JSParser.git \
 	merttasci/csrf-poc-generator \
 	mkamarin/ct2md \
 	mpepping/docker-cyberchef \
-	mpgn/CrackMapExec.git \
 	nahamsec/crtndstry.git \
 	nahamsec/lazyrecon.git \
 	nahamsec/lazys3.git \
 	nahamsec/recon_profile.git \
 	OWASP/CheatSheetSeries \
 	raj77in/dotfiles \
+	raj77in/wallpapers \
 	rajeshmajumdar/BruteXSS \
 	robotshell/magicRecon \
 	RUB-NDS/REST-Attacker \
@@ -326,7 +328,10 @@ done
 
 
 # Some python tools
-pip install --user pwntools
+uv venv ~/venv/pwntools
+source ~/venv/pwntools/bin/activate
+uv pip install --user pwntools
+deactivate
 
 echo "Installing aquatone"
 go install github.com/michenriksen/aquatone@latest
@@ -370,6 +375,12 @@ install_addon  wappalyzer-6.10.50.xpi "$EXTENSIONS_USER"
 wget -c https://addons.mozilla.org/firefox/downloads/file/4027621/retire_js-1.7.2.xpi
 install_addon  retire_js-1.7.2.xpi "$EXTENSIONS_USER"
 
+
+## Install uv tools
+for i in zapgpt xssblaster
+do
+    uv tool install $i
+done
 
 ## Setup  neovim
 cd ~/.config
